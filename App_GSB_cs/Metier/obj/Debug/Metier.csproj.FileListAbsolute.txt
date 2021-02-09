@@ -1,0 +1,41 @@
+D:\Desktop\Application C# GSP\Application-C-GSP\Projet\App GSB cs\Metier\bin\Debug\Metier.dll
+D:\Desktop\Application C# GSP\Application-C-GSP\Projet\App GSB cs\Metier\bin\Debug\Metier.pdb
+D:\Desktop\Application C# GSP\Application-C-GSP\Projet\App GSB cs\Metier\obj\Debug\Metier.csprojAssemblyReference.cache
+D:\Desktop\Application C# GSP\Application-C-GSP\Projet\App GSB cs\Metier\obj\Debug\Metier.dll
+D:\Desktop\Application C# GSP\Application-C-GSP\Projet\App GSB cs\Metier\obj\Debug\Metier.pdb
+C:\Users\fofof\Desktop\Cours_BTS\PPE\PPE3 Cas GSB2\depot\Projet\App GSB cs\Metier\bin\Debug\Metier.dll
+C:\Users\fofof\Desktop\Cours_BTS\PPE\PPE3 Cas GSB2\depot\Projet\App GSB cs\Metier\bin\Debug\Metier.pdb
+C:\Users\fofof\Desktop\Cours_BTS\PPE\PPE3 Cas GSB2\depot\Projet\App GSB cs\Metier\obj\Debug\Metier.csprojAssemblyReference.cache
+C:\Users\fofof\Desktop\Cours_BTS\PPE\PPE3 Cas GSB2\depot\Projet\App GSB cs\Metier\obj\Debug\Metier.csproj.CoreCompileInputs.cache
+C:\Users\fofof\Desktop\Cours_BTS\PPE\PPE3 Cas GSB2\depot\Projet\App GSB cs\Metier\obj\Debug\Metier.dll
+C:\Users\fofof\Desktop\Cours_BTS\PPE\PPE3 Cas GSB2\depot\Projet\App GSB cs\Metier\obj\Debug\Metier.pdb
+C:\Users\cbaud\Desktop\Dépôt GIT\Application-C-GSP\Projet\App GSB cs\Metier\bin\Debug\Metier.dll
+C:\Users\cbaud\Desktop\Dépôt GIT\Application-C-GSP\Projet\App GSB cs\Metier\bin\Debug\Metier.pdb
+C:\Users\cbaud\Desktop\Dépôt GIT\Application-C-GSP\Projet\App GSB cs\Metier\obj\Debug\Metier.csprojAssemblyReference.cache
+C:\Users\cbaud\Desktop\Dépôt GIT\Application-C-GSP\Projet\App GSB cs\Metier\obj\Debug\Metier.csproj.CoreCompileInputs.cache
+C:\Users\cbaud\Desktop\Dépôt GIT\Application-C-GSP\Projet\App GSB cs\Metier\obj\Debug\Metier.dll
+C:\Users\cbaud\Desktop\Dépôt GIT\Application-C-GSP\Projet\App GSB cs\Metier\obj\Debug\Metier.pdb
+D:\Desktop\Application C# GSP\Application-C-GSP\Projet\App GSB cs\Metier\obj\Debug\Metier.csproj.CoreCompileInputs.cache
+C:\Users\fofof\Desktop\Cours_BTS\PPE\PPE3 Cas GSB2\depot\Application-C-GSP-main\Projet\App GSB cs\Metier\bin\Debug\Metier.dll
+C:\Users\fofof\Desktop\Cours_BTS\PPE\PPE3 Cas GSB2\depot\Application-C-GSP-main\Projet\App GSB cs\Metier\bin\Debug\Metier.pdb
+C:\Users\fofof\Desktop\Cours_BTS\PPE\PPE3 Cas GSB2\depot\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.csprojAssemblyReference.cache
+C:\Users\fofof\Desktop\Cours_BTS\PPE\PPE3 Cas GSB2\depot\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.csproj.CoreCompileInputs.cache
+C:\Users\fofof\Desktop\Cours_BTS\PPE\PPE3 Cas GSB2\depot\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.dll
+C:\Users\fofof\Desktop\Cours_BTS\PPE\PPE3 Cas GSB2\depot\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.pdb
+D:\Desktop\GSB PPE C#\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\bin\Debug\Metier.dll
+D:\Desktop\GSB PPE C#\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\bin\Debug\Metier.pdb
+D:\Desktop\GSB PPE C#\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.csproj.CoreCompileInputs.cache
+D:\Desktop\GSB PPE C#\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.dll
+D:\Desktop\GSB PPE C#\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.pdb
+C:\Users\cbaud\Desktop\GIT---GSB\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\bin\Debug\Metier.dll
+C:\Users\cbaud\Desktop\GIT---GSB\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\bin\Debug\Metier.pdb
+C:\Users\cbaud\Desktop\GIT---GSB\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.csprojAssemblyReference.cache
+C:\Users\cbaud\Desktop\GIT---GSB\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.csproj.CoreCompileInputs.cache
+C:\Users\cbaud\Desktop\GIT---GSB\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.dll
+C:\Users\cbaud\Desktop\GIT---GSB\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.pdb
+C:\Users\cbaud\Desktop\PPE3 - GSB - Alexandre Siméon Moi\Version Actuelle\GIT---GSB\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\bin\Debug\Metier.dll
+C:\Users\cbaud\Desktop\PPE3 - GSB - Alexandre Siméon Moi\Version Actuelle\GIT---GSB\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\bin\Debug\Metier.pdb
+C:\Users\cbaud\Desktop\PPE3 - GSB - Alexandre Siméon Moi\Version Actuelle\GIT---GSB\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.csprojAssemblyReference.cache
+C:\Users\cbaud\Desktop\PPE3 - GSB - Alexandre Siméon Moi\Version Actuelle\GIT---GSB\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.csproj.CoreCompileInputs.cache
+C:\Users\cbaud\Desktop\PPE3 - GSB - Alexandre Siméon Moi\Version Actuelle\GIT---GSB\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.dll
+C:\Users\cbaud\Desktop\PPE3 - GSB - Alexandre Siméon Moi\Version Actuelle\GIT---GSB\GSB_CS\Application-C-GSP-main\Projet\App GSB cs\Metier\obj\Debug\Metier.pdb

@@ -1,0 +1,6 @@
+D:\Desktop\Application C# GSP\Application-C-GSP\Projet\App GSB cs\Metier\bin\Release\Metier.dll
+D:\Desktop\Application C# GSP\Application-C-GSP\Projet\App GSB cs\Metier\bin\Release\Metier.pdb
+D:\Desktop\Application C# GSP\Application-C-GSP\Projet\App GSB cs\Metier\obj\Release\Metier.csprojAssemblyReference.cache
+D:\Desktop\Application C# GSP\Application-C-GSP\Projet\App GSB cs\Metier\obj\Release\Metier.csproj.CoreCompileInputs.cache
+D:\Desktop\Application C# GSP\Application-C-GSP\Projet\App GSB cs\Metier\obj\Release\Metier.dll
+D:\Desktop\Application C# GSP\Application-C-GSP\Projet\App GSB cs\Metier\obj\Release\Metier.pdb

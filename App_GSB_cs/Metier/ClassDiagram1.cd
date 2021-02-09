@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Metier.BilanVisite">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAQAAAAAgAAAAAAAAgAAAAAAAQAAgA=</HashCode>
+      <FileName>BilanVisite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Medecins.medecin">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IMACACBAAAAAAAAAAAAQIAAAECAAIABAACAAQAAAAgA=</HashCode>
+      <FileName>Medecin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Medicaments.medicaments">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAACAAgAAAAAAAoAAAACAAAAAAAAAAAAAAAAAgE=</HashCode>
+      <FileName>Medicaments.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Visiteur.Visiteurs">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAEAAAAAAAAAAAAAQAEAAAAAAAABAAIAAABAgGgA=</HashCode>
+      <FileName>Visiteurs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FECBCE8-94C4-45FE-9C40-4B3DB82FF8F2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>App_GSB_cs</RootNamespace>
+    <AssemblyName>App GSB cs</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormBilanVisite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBilanVisite.Designer.cs">
+      <DependentUpon>FormBilanVisite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMere.Designer.cs">
+      <DependentUpon>FormMere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMedicaments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMedicaments.Designer.cs">
+      <DependentUpon>FormMedicaments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMedecins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMedecins.Designer.cs">
+      <DependentUpon>FormMedecins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifierVisiteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifierVisiteur.Designer.cs">
+      <DependentUpon>FormModifierVisiteur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVisiteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisiteur.Designer.cs">
+      <DependentUpon>FormVisiteur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Villes.cs" />
+    <EmbeddedResource Include="FormBilanVisite.resx">
+      <DependentUpon>FormBilanVisite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMedecins.resx">
+      <DependentUpon>FormMedecins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMedicaments.resx">
+      <DependentUpon>FormMedicaments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMere.resx">
+      <DependentUpon>FormMere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifierVisiteur.resx">
+      <DependentUpon>FormModifierVisiteur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVisiteur.resx">
+      <DependentUpon>FormVisiteur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\gsb.jpg" />
+    <None Include="Resources\gsb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Manager\Manager.csproj">
+      <Project>{ced3294d-1fd9-445b-b834-61523c3f4e5d}</Project>
+      <Name>Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Metier\Metier.csproj">
+      <Project>{f8fc1f40-059a-4c07-9fcf-ce207396658d}</Project>
+      <Name>Metier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Passerelle\Passerelle.csproj">
+      <Project>{9e861b8e-8bf5-4562-8f2d-235f7a15355a}</Project>
+      <Name>Passerelle</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
