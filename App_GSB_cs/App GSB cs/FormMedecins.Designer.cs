@@ -32,6 +32,7 @@
             this.btnModifierMedecin = new System.Windows.Forms.Button();
             this.txtBxPrenom = new System.Windows.Forms.TextBox();
             this.gbMedecin = new System.Windows.Forms.GroupBox();
+            this.txtBxIdMedecin = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.cbbxVille = new System.Windows.Forms.ComboBox();
             this.txtBxTelephone = new System.Windows.Forms.TextBox();
@@ -61,6 +62,8 @@
             this.motifVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rapport_visite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbRapport = new System.Windows.Forms.GroupBox();
+            this.dtp = new System.Windows.Forms.DateTimePicker();
+            this.cbbxMotif = new System.Windows.Forms.ComboBox();
             this.txtBxIdRapport = new System.Windows.Forms.TextBox();
             this.btnSupprimerRapport = new System.Windows.Forms.Button();
             this.btnModifierRapport = new System.Windows.Forms.Button();
@@ -68,9 +71,6 @@
             this.txtBxRapport = new System.Windows.Forms.TextBox();
             this.lblMotif = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.cbbxMotif = new System.Windows.Forms.ComboBox();
-            this.txtBxIdMedecin = new System.Windows.Forms.TextBox();
-            this.dtp = new System.Windows.Forms.DateTimePicker();
             this.gbMedecin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAllMedics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRapport)).BeginInit();
@@ -129,6 +129,15 @@
             this.gbMedecin.TabIndex = 35;
             this.gbMedecin.TabStop = false;
             this.gbMedecin.Text = "Ajout Praticien";
+            // 
+            // txtBxIdMedecin
+            // 
+            this.txtBxIdMedecin.HideSelection = false;
+            this.txtBxIdMedecin.Location = new System.Drawing.Point(110, 19);
+            this.txtBxIdMedecin.Name = "txtBxIdMedecin";
+            this.txtBxIdMedecin.ReadOnly = true;
+            this.txtBxIdMedecin.Size = new System.Drawing.Size(148, 20);
+            this.txtBxIdMedecin.TabIndex = 41;
             // 
             // btnClear
             // 
@@ -265,7 +274,7 @@
             this.dtgvAllMedics.Name = "dtgvAllMedics";
             this.dtgvAllMedics.Size = new System.Drawing.Size(843, 308);
             this.dtgvAllMedics.TabIndex = 32;
-            this.dtgvAllMedics.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvAllMedics_CellContentClick);
+            this.dtgvAllMedics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvAllMedics_CellContentClick_1);
             // 
             // nomMedecin
             // 
@@ -306,7 +315,6 @@
             // 
             this.idMedecin.HeaderText = "Id";
             this.idMedecin.Name = "idMedecin";
-            this.idMedecin.Visible = false;
             // 
             // dtgvRapport
             // 
@@ -366,6 +374,21 @@
             this.gbRapport.TabIndex = 40;
             this.gbRapport.TabStop = false;
             this.gbRapport.Text = "Gestion des rapports";
+            // 
+            // dtp
+            // 
+            this.dtp.Location = new System.Drawing.Point(110, 63);
+            this.dtp.Name = "dtp";
+            this.dtp.Size = new System.Drawing.Size(167, 20);
+            this.dtp.TabIndex = 41;
+            // 
+            // cbbxMotif
+            // 
+            this.cbbxMotif.FormattingEnabled = true;
+            this.cbbxMotif.Location = new System.Drawing.Point(110, 95);
+            this.cbbxMotif.Name = "cbbxMotif";
+            this.cbbxMotif.Size = new System.Drawing.Size(167, 21);
+            this.cbbxMotif.TabIndex = 40;
             // 
             // txtBxIdRapport
             // 
@@ -430,30 +453,6 @@
             this.lblDate.TabIndex = 2;
             this.lblDate.Text = "Date";
             // 
-            // cbbxMotif
-            // 
-            this.cbbxMotif.FormattingEnabled = true;
-            this.cbbxMotif.Location = new System.Drawing.Point(110, 95);
-            this.cbbxMotif.Name = "cbbxMotif";
-            this.cbbxMotif.Size = new System.Drawing.Size(167, 21);
-            this.cbbxMotif.TabIndex = 40;
-            // 
-            // txtBxIdMedecin
-            // 
-            this.txtBxIdMedecin.HideSelection = false;
-            this.txtBxIdMedecin.Location = new System.Drawing.Point(110, 19);
-            this.txtBxIdMedecin.Name = "txtBxIdMedecin";
-            this.txtBxIdMedecin.ReadOnly = true;
-            this.txtBxIdMedecin.Size = new System.Drawing.Size(148, 20);
-            this.txtBxIdMedecin.TabIndex = 41;
-            // 
-            // dtp
-            // 
-            this.dtp.Location = new System.Drawing.Point(110, 63);
-            this.dtp.Name = "dtp";
-            this.dtp.Size = new System.Drawing.Size(167, 20);
-            this.dtp.TabIndex = 41;
-            // 
             // FormMedecins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,14 +502,6 @@
         private System.Windows.Forms.TextBox txtBxTelephone;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ComboBox cbbxVille;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomMedecin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenomMedecin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn speMedecin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn villeMedecin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cpVille;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adresseMedecin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telephone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idMedecin;
         private System.Windows.Forms.GroupBox gbRapport;
         private System.Windows.Forms.Label lblMotif;
         private System.Windows.Forms.Label lblDate;
@@ -526,5 +517,13 @@
         private System.Windows.Forms.ComboBox cbbxMotif;
         private System.Windows.Forms.TextBox txtBxIdMedecin;
         private System.Windows.Forms.DateTimePicker dtp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomMedecin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prenomMedecin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn speMedecin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn villeMedecin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cpVille;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresseMedecin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telephone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMedecin;
     }
 }

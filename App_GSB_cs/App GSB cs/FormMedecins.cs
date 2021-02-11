@@ -119,41 +119,24 @@ namespace App_GSB_cs
 
         #region Selection Medecin
         //Lors du clic de l'utilisateur sur une cellule du dtdv Medecins
-        private void dtgvAllMedics_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgvAllMedics_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
             clearChampsRapport();
 
-            if (dtgvAllMedics.SelectedCells[0].Value == null || dtgvAllMedics.SelectedCells[1].Value == null)
-            {
-                MessageBox.Show("La ligne est vide.");
-            }
-            else
-            {
-                List<string[]> result = new List<string[]>();
-                //On essaye de prendre les informations de la ligne seléctionnée dans les cbbox et cbtxt
-                try
-                {
-                    result = Manager.Manager.SelectMedecin(dtgvAllMedics.SelectedCells[0].Value.ToString(), dtgvAllMedics.SelectedCells[1].Value.ToString());
-                    txtBxNom.Text = result[0][0];
-                    txtBxPrenom.Text = result[0][1];
-                    cbbxVille.Text = result[0][3] + " - " + result[0][4];
-                    txtBxAdresse.Text = result[0][5];
-                    txtBxTelephone.Text = result[0][6];
-                    cbbxSpecialite.Text = result[0][2];
-                    lastIdMedecin = Convert.ToInt32(result[0][7]);
-
-                }
-                //Sinon on affiche une erreur
-                catch
-                {
-                    MessageBox.Show("Cliquez sur la case vide en début de ligne pour sélectionner un praticien", "Erreur");
-                }
-            }
+           
+            List<string[]> result = new List<string[]>();
+            //On essaye de prendre les informations de la ligne seléctionnée dans les cbbox et cbtxt
+            result = Manager.Manager.SelectMedecin(Convert.ToInt32(dtgvAllMedics.Rows[e.RowIndex].Cells[7].Value));
+            txtBxIdMedecin.Text = result[0][7];
+            txtBxNom.Text = result[0][0];
+            txtBxPrenom.Text = result[0][1];
+            cbbxVille.Text = result[0][3] + " - " + result[0][4];
+            txtBxAdresse.Text = result[0][5];
+            txtBxTelephone.Text = result[0][6];
+            cbbxSpecialite.Text = result[0][2];
 
 
-            //On clean le dtgv des rapports 
-            dtgvRapport.Rows.Clear();
             //On essaye de prendre les rapports liés au medecin sélectionné
             try
             {
@@ -333,12 +316,13 @@ namespace App_GSB_cs
         }
 
 
-        #endregion
 
         #endregion
 
         #endregion
 
-       
+        #endregion
+
+     
     }
 }

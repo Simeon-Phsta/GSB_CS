@@ -79,20 +79,22 @@ namespace Manager
                 return Passerelle.Query(Manager.conenct(), sql);
             }
         #endregion
-
         #region Medecins
 
         //affichage de la liste des medecins
         static public List<string[]>  SelectMedecins()
         {
-            string sql = "SELECT medecin.nom as nom, medecin.prenom as prenom, specialiste.libelle as specialite , villes_france_free.ville_nom_reel as ville, villes_france_free.ville_code_postal, medecin.adresse, medecin.telephone, medecin.id FROM medecin INNER JOIN specialiste ON medecin.idSpecialiste = specialiste.id LEFT JOIN villes_france_free ON medecin.idVille = villes_france_free.ville_id ORDER BY medecin.nom";
+            string sql = "SELECT medecin.nom as nom, medecin.prenom as prenom, " +
+                "specialiste.libelle as specialite , villes_france_free.ville_nom_reel as ville, " +
+                "villes_france_free.ville_code_postal, medecin.adresse, medecin.telephone," +
+                " medecin.id FROM medecin INNER JOIN specialiste ON medecin.idSpecialiste = specialiste.id LEFT JOIN villes_france_free ON medecin.idVille = villes_france_free.ville_id ORDER BY medecin.nom";
             return Passerelle.Query(Manager.conenct(), sql);
         }
 
         //affichage d'un medecin précis pour le formulaire de modification
-        static public List<string[]> SelectMedecin(string nomMedecin, string prenomMedecin)
+        static public List<string[]> SelectMedecin(int unId)
         {
-            string sql = "SELECT medecin.nom as nom, medecin.prenom as prenom, specialiste.libelle as specialite , villes_france_free.ville_nom_reel as ville, villes_france_free.ville_code_postal, medecin.adresse, medecin.telephone, medecin.id  FROM medecin INNER JOIN specialiste ON medecin.idSpecialiste = specialiste.id LEFT JOIN villes_france_free ON medecin.idVille = villes_france_free.ville_id WHERE medecin.nom = '" + nomMedecin + "' AND  medecin.prenom = '" + prenomMedecin + "' ORDER BY medecin.nom ";
+            string sql = "SELECT medecin.nom as nom, medecin.prenom as prenom, specialiste.libelle as specialite , villes_france_free.ville_nom_reel as ville, villes_france_free.ville_code_postal, medecin.adresse, medecin.telephone, medecin.id  FROM medecin INNER JOIN specialiste ON medecin.idSpecialiste = specialiste.id LEFT JOIN villes_france_free ON medecin.idVille = villes_france_free.ville_id WHERE medecin.id = '" + unId + "' ORDER BY medecin.nom ";
             return Passerelle.Query(Manager.conenct(), sql);
         }
 
@@ -153,7 +155,6 @@ namespace Manager
         }
 
         #endregion
-
         #region Rapports / Bilan
 
         // Affichage de la liste des rapoorts pour le médecin sélectionné
@@ -198,7 +199,6 @@ namespace Manager
         }
 
         #endregion
-
         #region Visiteurs
         //séléctionner le dernier id
         static public List<string[]> SelectMaxIdVisiteur()
