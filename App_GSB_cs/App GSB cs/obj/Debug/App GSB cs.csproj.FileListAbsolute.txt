@@ -323,3 +323,37 @@ C:\Users\fofof\Desktop\Application-C-GSP-main\Projet\App GSB cs\App GSB cs\obj\D
 C:\Users\fofof\Desktop\Application-C-GSP-main\Projet\App GSB cs\App GSB cs\obj\Debug\App GSB cs.csproj.CopyComplete
 C:\Users\fofof\Desktop\Application-C-GSP-main\Projet\App GSB cs\App GSB cs\obj\Debug\App GSB cs.exe
 C:\Users\fofof\Desktop\Application-C-GSP-main\Projet\App GSB cs\App GSB cs\obj\Debug\App GSB cs.pdb
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\App GSB cs.exe.config
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\App GSB cs.exe
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\App GSB cs.pdb
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\Manager.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\Metier.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\Passerelle.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\Zstandard.Net.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\Renci.SshNet.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\System.Buffers.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\System.Memory.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\Manager.pdb
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\Metier.pdb
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\Passerelle.pdb
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\bin\Debug\Passerelle.dll.config
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App GSB cs.csprojAssemblyReference.cache
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App_GSB_cs.FormBilanVisite.resources
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App_GSB_cs.FormMedecins.resources
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App_GSB_cs.FormMedicaments.resources
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App_GSB_cs.FormMere.resources
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App_GSB_cs.FormModifierVisiteur.resources
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App_GSB_cs.FormVisiteur.resources
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App_GSB_cs.Properties.Resources.resources
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App GSB cs.csproj.GenerateResource.cache
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App GSB cs.csproj.CoreCompileInputs.cache
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App GSB cs.csproj.CopyComplete
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App GSB cs.exe
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\App GSB cs\obj\Debug\App GSB cs.pdb

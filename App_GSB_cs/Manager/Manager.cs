@@ -12,7 +12,9 @@ namespace Manager
         {
             return Passerelle.GetDBConnection("localhost", 3306, "ppe_gsb_cs", "root", "");
         }
+
         #region Selects
+
         #region Medicaments
             static public List<string[]> SelectMedicaments()
             {
@@ -69,9 +71,17 @@ namespace Manager
                 string sql = "Select Max(id) from famille";
                 return Convert.ToInt32(Passerelle.Query(Manager.conenct(), sql)[0][0]);
             }
+
+            //id médicament
+            static public List<string[]> SelectIDmedicament(string nomCommercial)
+            {
+                string sql = "SELECT id FROM medicament WHERE nomCommercial = '" + nomCommercial + "'";
+                return Passerelle.Query(Manager.conenct(), sql);
+            }
         #endregion
+
         #region Medecins
-        
+
         //affichage de la liste des medecins
         static public List<string[]>  SelectMedecins()
         {
@@ -93,22 +103,6 @@ namespace Manager
             return Passerelle.Query(Manager.conenct(), sql);
         }
 
-
-
-        // Affichage de la liste des rapoorts pour le médecin sélectionné
-        static public List<string[]> SelectRapports(string nomMedecin, string prenomMedecin)
-        {
-            string sql = "SELECT rapport.id, date, motif FROM rapport INNER JOIN medecin ON medecin.id = rapport.idMedecin  WHERE medecin.nom = '" + nomMedecin + "' AND  medecin.prenom = '" + prenomMedecin + "'";
-            return Passerelle.Query(Manager.conenct(), sql);
-        }
-
-        //Affichage du "pop up" contenant la bilan d'un rapport selectionner avec son id
-        static public List<string[]> SelectBilanRapport(string idRapport)
-        {
-            string sql = "SELECT bilan FROM rapport WHERE id ='" + idRapport + "'"; 
-            return Passerelle.Query(Manager.conenct(), sql);
-        }
-
         //Récupération des spécialités pour le cbboxSpecialite
         static public List<string[]> SelectSpecialites()
         {
@@ -116,12 +110,24 @@ namespace Manager
             return Passerelle.Query(Manager.conenct(), sql);
         }
 
-
+        //Select de l'id d'un medecin par son nom et prenom
+        static public List<string[]> SelectIDpraticien(string nom, string prenom)
+        {
+            string sql = "SELECT id FROM medecin WHERE nom = '" + nom + "' AND prenom = '" + prenom + "'";
+            return Passerelle.Query(Manager.conenct(), sql);
+        }
 
         //Récupération des villes pour le cbboxVille
         static public List<string[]> SelectVilles()
         {
             string sql = "SELECT ville_nom_reel, ville_code_postal FROM villes_france_free";
+            return Passerelle.Query(Manager.conenct(), sql);
+        }
+
+        //affichage de la liste des praticiens
+        static public List<string[]> SelectPraticiens()
+        {
+            string sql = "SELECT nom, prenom, ville_nom_reel AS ville FROM medecin INNER JOIN villes_france_free ON medecin.idVille = villes_france_free.ville_id";
             return Passerelle.Query(Manager.conenct(), sql);
         }
 
@@ -148,6 +154,51 @@ namespace Manager
 
         #endregion
 
+        #region Rapports / Bilan
+
+        // Affichage de la liste des rapoorts pour le médecin sélectionné
+        static public List<string[]> SelectRapports(string nomMedecin, string prenomMedecin)
+        {
+            string sql = "SELECT rapport.id, date, motif, bilan FROM rapport INNER JOIN medecin ON medecin.id = rapport.idMedecin  WHERE medecin.nom = '" + nomMedecin + "' AND  medecin.prenom = '" + prenomMedecin + "'";
+            return Passerelle.Query(Manager.conenct(), sql);
+        }
+
+        static public List<string[]> SelectRapport(string idRapport)
+        {
+            string sql = "SELECT rapport.id, date, motif, bilan FROM rapport INNER JOIN medecin ON medecin.id = rapport.idMedecin  WHERE rapport.id = '" + idRapport + "'";
+            return Passerelle.Query(Manager.conenct(), sql);
+        }
+
+        //Affichage du "pop up" contenant la bilan d'un rapport selectionner avec son id
+        static public List<string[]> SelectBilanRapport(string idRapport)
+        {
+            string sql = "SELECT bilan FROM rapport WHERE id ='" + idRapport + "'";
+            return Passerelle.Query(Manager.conenct(), sql);
+        }
+
+        //séléctionner le dernier id des rapports
+        static public List<string[]> SelectMaxIdBilan()
+        {
+            string sql = "SELECT MAX(id) FROM rapport";
+            return Passerelle.Query(Manager.conenct(), sql);
+        }
+
+        //Select un rapport en fonction de son idMedecin et idVisiteur
+        static public List<string[]> SelectIDbilan(int idP, int idV)
+        {
+            string sql = "SELECT id FROM rapport WHERE idMedecin = " + idP + " AND idVisiteur = " + idV;
+            return Passerelle.Query(Manager.conenct(), sql);
+        }
+
+        //select de tous les motifs
+        static public List<string[]> SelectMotif()
+        {
+            string sql = "SELECT motif FROM rapport";
+            return Passerelle.Query(Manager.conenct(), sql);
+        }
+
+        #endregion
+
         #region Visiteurs
         //séléctionner le dernier id
         static public List<string[]> SelectMaxIdVisiteur()
@@ -169,6 +220,13 @@ namespace Manager
             return Passerelle.Query(Manager.conenct(), sql);
         }
 
+        //Select l'id d'un visiteur par rapport à son nom et prenom
+        static public List<string[]> SelectIDvisiteur(string nom, string prenom)
+        {
+            string sql = "SELECT id FROM visiteur WHERE nom ='" + nom + "' AND prenom = '" + prenom + "'";
+            return Passerelle.Query(Manager.conenct(), sql);
+        }
+
         //récuérer id de la ville
         static public List<string[]> SelectIdVille(string idVille)
         {
@@ -183,20 +241,6 @@ namespace Manager
             return Passerelle.Query(Manager.conenct(), sql);
         }
 
-        //afficher le nom de la ville avec son code postal dans FormModifierVisiteur
-        static public List<string[]> SelectVilleCDP(string villeID)
-        {
-            string sql = "SELECT ville_nom_reel, ville_code_postal FROM villes_france_free WHERE ville_id =" + villeID;
-            return Passerelle.Query(Manager.conenct(), sql);
-        }
-        #endregion
-        #region Bilan Visite
-        //séléctionner le dernier id
-        static public List<string[]> SelectMaxIdBilan()
-        {
-            string sql = "SELECT MAX(id) FROM rapport";
-            return Passerelle.Query(Manager.conenct(), sql);
-        }
         //affichage de la liste des visiteurs
         static public List<string[]> SelectVisiteurs()
         {
@@ -204,43 +248,16 @@ namespace Manager
             return Passerelle.Query(Manager.conenct(), sql);
         }
 
-        //affichage de la liste des praticiens
-        static public List<string[]> SelectPraticiens()
+        //afficher le nom de la ville avec son code postal dans FormModifierVisiteur
+        static public List<string[]> SelectVilleCDP(string villeID)
         {
-            string sql = "SELECT nom, prenom, ville_nom_reel AS ville FROM medecin INNER JOIN villes_france_free ON medecin.idVille = villes_france_free.ville_id";
+            string sql = "SELECT ville_nom_reel, ville_code_postal FROM villes_france_free WHERE ville_id =" + villeID;
             return Passerelle.Query(Manager.conenct(), sql);
         }
-
-        //id du visiteur
-        static public List<string[]> SelectIDvisiteur(string nom, string prenom)
-        {
-            string sql = "SELECT id FROM visiteur WHERE nom ='" + nom + "' AND prenom = '" + prenom + "'";
-            return Passerelle.Query(Manager.conenct(), sql);
-        }
-
-        //id du praticien
-        static public List<string[]> SelectIDpraticien(string nom, string prenom)
-        {
-            string sql = "SELECT id FROM medecin WHERE nom = '" + nom + "' AND prenom = '" + prenom + "'";
-            return Passerelle.Query(Manager.conenct(), sql);
-        }
-
-        //id d'un bilan
-        static public List<string[]> SelectIDbilan(int idP, int idV)
-        {
-            string sql = "SELECT id FROM rapport WHERE idMedecin = " + idP + " AND idVisiteur = " + idV;
-            return Passerelle.Query(Manager.conenct(), sql);
-        }
-
-        //id médicament
-        static public List<string[]> SelectIDmedicament(string nomCommercial)
-        {
-            string sql = "SELECT id FROM medicament WHERE nomCommercial = '" + nomCommercial + "'";
-            return Passerelle.Query(Manager.conenct(), sql);
-        }
+        #endregion
 
         #endregion
-        #endregion
+
         #region Insert Update Delete
         #region Medicaments
 
@@ -299,6 +316,14 @@ namespace Manager
             Passerelle.InsertUpdateDel(Manager.conenct(), sql);
         }
         #endregion
+        #region Echantillons (offrir)
+        //ajouter les échantillons dans offrir
+        static public void AddOffre(int idMedicament, int idRapport, int quantite)
+        {
+            string sql = "INSERT INTO offrir (idMedicament, idRapport, quantite) VALUES (" + idMedicament + ", " + idRapport + ", " + quantite + ")";
+            Passerelle.InsertUpdateDel(Manager.conenct(), sql);
+        }
+        #endregion
         #region Medecins
 
         //Suppression d'un medecin avec son nom et prenom dans le formulaire
@@ -352,6 +377,45 @@ namespace Manager
 
             string sql = "INSERT INTO medecin ( nom, prenom, adresse, idVille, telephone, idSpecialiste) VALUES ('" + newNom + "', '" + newPrenom + "', '" + newAdresse + "', '" + newVille + "', '" + newTelephone + "', '" + newIdSpecialiste + "')";
             Passerelle.InsertUpdateDel(Manager.conenct(), sql);
+        }
+
+        #endregion
+        #region Rapports / Bilan
+
+        //ajouter un bilan
+        static public void AddBilanVisite(string praticien, string visiteur, string date, string motif, string impact)
+        {
+            date = Convert.ToDateTime(date).ToShortDateString();
+            date = date.Replace('/', '-');
+            date = date[6].ToString() + date[7].ToString() + date[8].ToString() + date[9].ToString() + date[2].ToString() + date[3].ToString() + date[4].ToString() + date[2].ToString() + date[0].ToString() + date[1].ToString();
+
+            praticien = praticien.Replace("'", " ");
+            praticien = praticien.Replace('"', ' ');
+
+            visiteur = visiteur.Replace("'", " ");
+            visiteur = visiteur.Replace('"', ' ');
+
+            motif = motif.Replace("'", " ");
+            motif = motif.Replace('"', ' ');
+
+            impact = impact.Replace("'", " ");
+            impact = impact.Replace('"', ' ');
+
+            int id = Convert.ToInt16(Manager.SelectMaxIdBilan()[0][0]);
+            int unId = id + 1;
+
+            string sql = "INSERT INTO rapport (id, date, motif, bilan, idMedecin, idVisiteur) VALUES (" + unId + ",'" + date + "', '" + motif + "', '" + impact + "', '" + praticien + "', '" + visiteur + "')";
+            Passerelle.InsertUpdateDel(Manager.conenct(), sql);
+
+        }
+        
+        //Suppression d'un rapport avec son id et des ses échantillons associés
+        static public void DeleteRapport(int unId)
+        {
+            string sql = "DELETE FROM offrir WHERE offrir.idRapport = '" + unId + "'";
+            Passerelle.InsertUpdateDel(Manager.conenct(), sql);
+            string supp = "DELETE FROM rapport WHERE rapport.id = '" + unId + "'";
+            Passerelle.InsertUpdateDel(Manager.conenct(), supp);
         }
         #endregion
         #region Visiteurs
@@ -428,41 +492,6 @@ namespace Manager
             string req = "DELETE FROM rapport WHERE idVisiteur = " + unId;
             Passerelle.InsertUpdateDel(Manager.conenct(), req);
             string sql = "DELETE FROM visiteur WHERE nom ='" + unNom + "' AND prenom ='" + unPrenom + "'";
-            Passerelle.InsertUpdateDel(Manager.conenct(), sql);
-        }
-        #endregion
-        #region Bilan Visite
-        //ajouter un bilan
-        static public void AddBilanVisite(string praticien, string visiteur, string date, string motif, string impact)
-        {
-            date = Convert.ToDateTime(date).ToShortDateString();
-            date = date.Replace('/', '-');
-            date = date[6].ToString() + date[7].ToString() + date[8].ToString() + date[9].ToString() + date[2].ToString() + date[3].ToString() + date[4].ToString() + date[2].ToString() + date[0].ToString() + date[1].ToString();
-
-            praticien = praticien.Replace("'", " ");
-            praticien = praticien.Replace('"', ' ');
-
-            visiteur = visiteur.Replace("'", " ");
-            visiteur = visiteur.Replace('"', ' ');
-
-            motif = motif.Replace("'", " ");
-            motif = motif.Replace('"', ' ');
-
-            impact = impact.Replace("'", " ");
-            impact = impact.Replace('"', ' ');
-
-            int id = Convert.ToInt16(Manager.SelectMaxIdBilan()[0][0]);
-            int unId = id + 1;
-
-            string sql = "INSERT INTO rapport (id, date, motif, bilan, idMedecin, idVisiteur) VALUES (" + unId + ",'" + date + "', '" + motif + "', '" + impact + "', '" + praticien + "', '" + visiteur + "')";
-            Passerelle.InsertUpdateDel(Manager.conenct(), sql);
-
-        }
-
-        //ajouter les échantillons dans offrir
-        static public void AddOffre(int idMedicament, int idRapport, int quantite)
-        {
-            string sql = "INSERT INTO offrir (idMedicament, idRapport, quantite) VALUES (" + idMedicament + ", " + idRapport + ", " + quantite + ")";
             Passerelle.InsertUpdateDel(Manager.conenct(), sql);
         }
         #endregion

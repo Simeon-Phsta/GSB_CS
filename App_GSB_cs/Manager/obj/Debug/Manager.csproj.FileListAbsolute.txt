@@ -189,3 +189,25 @@ C:\Users\fofof\Desktop\Application-C-GSP-main\Projet\App GSB cs\Manager\obj\Debu
 C:\Users\fofof\Desktop\Application-C-GSP-main\Projet\App GSB cs\Manager\obj\Debug\Manager.csproj.CopyComplete
 C:\Users\fofof\Desktop\Application-C-GSP-main\Projet\App GSB cs\Manager\obj\Debug\Manager.dll
 C:\Users\fofof\Desktop\Application-C-GSP-main\Projet\App GSB cs\Manager\obj\Debug\Manager.pdb
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\Manager.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\Manager.pdb
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\MySql.Data.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\Passerelle.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\Zstandard.Net.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\Renci.SshNet.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\System.Buffers.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\System.Memory.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\Passerelle.pdb
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\bin\Debug\Passerelle.dll.config
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\obj\Debug\Manager.csprojAssemblyReference.cache
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\obj\Debug\Manager.csproj.CoreCompileInputs.cache
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\obj\Debug\Manager.csproj.CopyComplete
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\obj\Debug\Manager.dll
+C:\Users\fofof\Desktop\GSB_CS\GSB_CS\App_GSB_cs\Manager\obj\Debug\Manager.pdb
