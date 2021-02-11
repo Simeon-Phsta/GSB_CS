@@ -69,11 +69,11 @@
             this.groupBox1.Controls.Add(this.mv_dgw);
             this.groupBox1.Controls.Add(this.mv_btnSupprimer);
             this.groupBox1.Controls.Add(this.mv_btnModifier);
-            this.groupBox1.Location = new System.Drawing.Point(26, 37);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(11, 35);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(742, 363);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(886, 366);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "MODIFICATION OU SUPPRESSION D\'UN COMPTE VISITEUR";
@@ -81,7 +81,7 @@
             // mv_txb_idVisiteur
             // 
             this.mv_txb_idVisiteur.Location = new System.Drawing.Point(649, 332);
-            this.mv_txb_idVisiteur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mv_txb_idVisiteur.Margin = new System.Windows.Forms.Padding(2);
             this.mv_txb_idVisiteur.Name = "mv_txb_idVisiteur";
             this.mv_txb_idVisiteur.Size = new System.Drawing.Size(76, 20);
             this.mv_txb_idVisiteur.TabIndex = 35;
@@ -89,7 +89,7 @@
             // mv_tbxDate
             // 
             this.mv_tbxDate.Location = new System.Drawing.Point(142, 316);
-            this.mv_tbxDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mv_tbxDate.Margin = new System.Windows.Forms.Padding(2);
             this.mv_tbxDate.Name = "mv_tbxDate";
             this.mv_tbxDate.Size = new System.Drawing.Size(205, 20);
             this.mv_tbxDate.TabIndex = 34;
@@ -107,7 +107,7 @@
             // mv_txbNomVis
             // 
             this.mv_txbNomVis.Location = new System.Drawing.Point(142, 174);
-            this.mv_txbNomVis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mv_txbNomVis.Margin = new System.Windows.Forms.Padding(2);
             this.mv_txbNomVis.Name = "mv_txbNomVis";
             this.mv_txbNomVis.Size = new System.Drawing.Size(205, 20);
             this.mv_txbNomVis.TabIndex = 29;
@@ -116,7 +116,7 @@
             // 
             this.mv_cbxVille.FormattingEnabled = true;
             this.mv_cbxVille.Location = new System.Drawing.Point(142, 280);
-            this.mv_cbxVille.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mv_cbxVille.Margin = new System.Windows.Forms.Padding(2);
             this.mv_cbxVille.Name = "mv_cbxVille";
             this.mv_cbxVille.Size = new System.Drawing.Size(205, 21);
             this.mv_cbxVille.TabIndex = 32;
@@ -134,7 +134,7 @@
             // mv_txbPrenomVis
             // 
             this.mv_txbPrenomVis.Location = new System.Drawing.Point(142, 209);
-            this.mv_txbPrenomVis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mv_txbPrenomVis.Margin = new System.Windows.Forms.Padding(2);
             this.mv_txbPrenomVis.Name = "mv_txbPrenomVis";
             this.mv_txbPrenomVis.Size = new System.Drawing.Size(205, 20);
             this.mv_txbPrenomVis.TabIndex = 30;
@@ -163,7 +163,7 @@
             // mv_txbAdresse
             // 
             this.mv_txbAdresse.Location = new System.Drawing.Point(142, 245);
-            this.mv_txbAdresse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mv_txbAdresse.Margin = new System.Windows.Forms.Padding(2);
             this.mv_txbAdresse.Name = "mv_txbAdresse";
             this.mv_txbAdresse.Size = new System.Drawing.Size(205, 20);
             this.mv_txbAdresse.TabIndex = 31;
@@ -188,12 +188,12 @@
             this.Column3,
             this.Column5,
             this.Column6});
-            this.mv_dgw.Location = new System.Drawing.Point(18, 31);
-            this.mv_dgw.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mv_dgw.Location = new System.Drawing.Point(0, 31);
+            this.mv_dgw.Margin = new System.Windows.Forms.Padding(2);
             this.mv_dgw.Name = "mv_dgw";
             this.mv_dgw.RowHeadersWidth = 51;
             this.mv_dgw.RowTemplate.Height = 24;
-            this.mv_dgw.Size = new System.Drawing.Size(706, 122);
+            this.mv_dgw.Size = new System.Drawing.Size(804, 122);
             this.mv_dgw.TabIndex = 23;
             this.mv_dgw.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mv_dgw_CellDoubleClick);
             // 
@@ -242,7 +242,7 @@
             // mv_btnSupprimer
             // 
             this.mv_btnSupprimer.Location = new System.Drawing.Point(584, 240);
-            this.mv_btnSupprimer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mv_btnSupprimer.Margin = new System.Windows.Forms.Padding(2);
             this.mv_btnSupprimer.Name = "mv_btnSupprimer";
             this.mv_btnSupprimer.Size = new System.Drawing.Size(100, 28);
             this.mv_btnSupprimer.TabIndex = 21;
@@ -253,7 +253,7 @@
             // mv_btnModifier
             // 
             this.mv_btnModifier.Location = new System.Drawing.Point(438, 240);
-            this.mv_btnModifier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mv_btnModifier.Margin = new System.Windows.Forms.Padding(2);
             this.mv_btnModifier.Name = "mv_btnModifier";
             this.mv_btnModifier.Size = new System.Drawing.Size(100, 28);
             this.mv_btnModifier.TabIndex = 20;
@@ -265,9 +265,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 438);
+            this.ClientSize = new System.Drawing.Size(934, 470);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormModifierVisiteur";
             this.Text = "Modifier Visiteur";
             this.Load += new System.EventHandler(this.FormModifierVisiteur_Load);

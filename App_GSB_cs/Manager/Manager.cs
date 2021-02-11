@@ -408,7 +408,21 @@ namespace Manager
             Passerelle.InsertUpdateDel(Manager.conenct(), sql);
 
         }
-        
+
+        //Modification d'un rapport 
+        static public void UpdateRapport(int id, string uneDate, string unMotif, string unBilan)
+        {
+            uneDate = Convert.ToDateTime(uneDate).ToShortDateString();
+            uneDate = uneDate.Replace('/', '-');
+            uneDate = uneDate[6].ToString() + uneDate[7].ToString() + uneDate[8].ToString() + uneDate[9].ToString() + uneDate[2].ToString() + uneDate[3].ToString() + uneDate[4].ToString() + uneDate[2].ToString() + uneDate[0].ToString() + uneDate[1].ToString();
+            uneDate = uneDate.Replace("'", " ");
+            uneDate = uneDate.Replace('"', ' ');
+
+            MessageBox.Show(Convert.ToString(id)); MessageBox.Show(uneDate); MessageBox.Show(unMotif); MessageBox.Show(unBilan);
+            string sql = "UPDATE rapport SET rapport.motif = '" + unMotif + "' , rapport.bilan = '" + unBilan + "', rapport.date = '" + uneDate + "'  WHERE rapport.id = " + id ;
+            Passerelle.InsertUpdateDel(Manager.conenct(), sql);
+        }
+
         //Suppression d'un rapport avec son id et des ses échantillons associés
         static public void DeleteRapport(int unId)
         {
@@ -424,8 +438,8 @@ namespace Manager
         {
             uneDate = Convert.ToDateTime(uneDate).ToShortDateString();
             uneDate = uneDate.Replace('/', '-');
-
             uneDate = uneDate[6].ToString() + uneDate[7].ToString() + uneDate[8].ToString() + uneDate[9].ToString() + uneDate[2].ToString() + uneDate[3].ToString() + uneDate[4].ToString() + uneDate[2].ToString() + uneDate[0].ToString() + uneDate[1].ToString();
+
             unPrenom = unPrenom.Replace("'", " ");
             unPrenom = unPrenom.Replace('"', ' ');
 

@@ -107,7 +107,7 @@ namespace App_GSB_cs
             dtgvRapport.Rows.Clear();
             cbbxMotif.SelectedIndex = 0;
             txtBxIdRapport.Text = "";
-            txtBxDate.Text = "";
+            //dtp.Value;
             txtBxRapport.Text = "";
         }
         #endregion
@@ -271,7 +271,7 @@ namespace App_GSB_cs
                     {
                         result = Manager.Manager.SelectRapport(dtgvRapport.SelectedCells[0].Value.ToString());
                         txtBxIdRapport.Text = result[0][0];//id
-                        txtBxDate.Text = result[0][1];//Date
+                        dtp.Value = Convert.ToDateTime( result[0][1]);//Date
                         cbbxMotif.Text = result[0][2];//motif
                         txtBxRapport.Text = result[0][3];//bilan
 
@@ -296,12 +296,14 @@ namespace App_GSB_cs
         #region Bouton Modifier Rapport
         private void btnModifierRapport_Click(object sender, EventArgs e)
         {
-            //On prends les données des différents cbbox et cbtxt puis on envoie la requête
-            string[] temp = cbbxVille.Text.Split('-');
-            string cp = temp[1].Substring(1);
-            string ville = temp[0];
-            ville = ville.Substring(0, ville.Length - 1);
-            Manager.Manager.ModifMedecin(txtBxNom.Text, txtBxPrenom.Text, txtBxAdresse.Text, Manager.Manager.SelectIdVille(ville, cp)[0][0], txtBxTelephone.Text, Manager.Manager.SelectIdSpecialiste(cbbxSpecialite.Text)[0][0], lastIdMedecin);
+
+            MessageBox.Show(txtBxIdRapport.Text);
+            MessageBox.Show(dtp.Text);
+            MessageBox.Show(cbbxMotif.Text);
+            MessageBox.Show(txtBxRapport.Text);
+            
+
+            Manager.Manager.UpdateRapport( Convert.ToInt32(txtBxIdRapport.Text), dtp.Text, cbbxMotif.Text, txtBxRapport.Text);
             //On recharge le tout 
             reload();
         }

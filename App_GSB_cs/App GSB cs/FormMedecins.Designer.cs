@@ -68,9 +68,9 @@
             this.txtBxRapport = new System.Windows.Forms.TextBox();
             this.lblMotif = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.txtBxDate = new System.Windows.Forms.TextBox();
             this.cbbxMotif = new System.Windows.Forms.ComboBox();
             this.txtBxIdMedecin = new System.Windows.Forms.TextBox();
+            this.dtp = new System.Windows.Forms.DateTimePicker();
             this.gbMedecin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAllMedics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRapport)).BeginInit();
@@ -351,6 +351,7 @@
             // 
             // gbRapport
             // 
+            this.gbRapport.Controls.Add(this.dtp);
             this.gbRapport.Controls.Add(this.cbbxMotif);
             this.gbRapport.Controls.Add(this.txtBxIdRapport);
             this.gbRapport.Controls.Add(this.btnSupprimerRapport);
@@ -359,7 +360,6 @@
             this.gbRapport.Controls.Add(this.txtBxRapport);
             this.gbRapport.Controls.Add(this.lblMotif);
             this.gbRapport.Controls.Add(this.lblDate);
-            this.gbRapport.Controls.Add(this.txtBxDate);
             this.gbRapport.Location = new System.Drawing.Point(910, 341);
             this.gbRapport.Name = "gbRapport";
             this.gbRapport.Size = new System.Drawing.Size(283, 253);
@@ -373,7 +373,7 @@
             this.txtBxIdRapport.Location = new System.Drawing.Point(110, 37);
             this.txtBxIdRapport.Name = "txtBxIdRapport";
             this.txtBxIdRapport.ReadOnly = true;
-            this.txtBxIdRapport.Size = new System.Drawing.Size(148, 20);
+            this.txtBxIdRapport.Size = new System.Drawing.Size(167, 20);
             this.txtBxIdRapport.TabIndex = 8;
             // 
             // btnSupprimerRapport
@@ -409,7 +409,7 @@
             // 
             this.txtBxRapport.Location = new System.Drawing.Point(110, 143);
             this.txtBxRapport.Name = "txtBxRapport";
-            this.txtBxRapport.Size = new System.Drawing.Size(148, 20);
+            this.txtBxRapport.Size = new System.Drawing.Size(167, 20);
             this.txtBxRapport.TabIndex = 4;
             // 
             // lblMotif
@@ -430,19 +430,12 @@
             this.lblDate.TabIndex = 2;
             this.lblDate.Text = "Date";
             // 
-            // txtBxDate
-            // 
-            this.txtBxDate.Location = new System.Drawing.Point(110, 63);
-            this.txtBxDate.Name = "txtBxDate";
-            this.txtBxDate.Size = new System.Drawing.Size(148, 20);
-            this.txtBxDate.TabIndex = 0;
-            // 
             // cbbxMotif
             // 
             this.cbbxMotif.FormattingEnabled = true;
             this.cbbxMotif.Location = new System.Drawing.Point(110, 95);
             this.cbbxMotif.Name = "cbbxMotif";
-            this.cbbxMotif.Size = new System.Drawing.Size(148, 21);
+            this.cbbxMotif.Size = new System.Drawing.Size(167, 21);
             this.cbbxMotif.TabIndex = 40;
             // 
             // txtBxIdMedecin
@@ -453,6 +446,13 @@
             this.txtBxIdMedecin.ReadOnly = true;
             this.txtBxIdMedecin.Size = new System.Drawing.Size(148, 20);
             this.txtBxIdMedecin.TabIndex = 41;
+            // 
+            // dtp
+            // 
+            this.dtp.Location = new System.Drawing.Point(110, 63);
+            this.dtp.Name = "dtp";
+            this.dtp.Size = new System.Drawing.Size(167, 20);
+            this.dtp.TabIndex = 41;
             // 
             // FormMedecins
             // 
@@ -514,7 +514,6 @@
         private System.Windows.Forms.GroupBox gbRapport;
         private System.Windows.Forms.Label lblMotif;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.TextBox txtBxDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDerniereVisite;
         private System.Windows.Forms.DataGridViewTextBoxColumn motifVisite;
@@ -526,5 +525,6 @@
         private System.Windows.Forms.TextBox txtBxIdRapport;
         private System.Windows.Forms.ComboBox cbbxMotif;
         private System.Windows.Forms.TextBox txtBxIdMedecin;
+        private System.Windows.Forms.DateTimePicker dtp;
     }
 }
