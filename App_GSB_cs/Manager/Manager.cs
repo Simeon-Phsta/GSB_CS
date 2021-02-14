@@ -87,23 +87,30 @@ namespace Manager
             string sql = "SELECT medecin.nom as nom, medecin.prenom as prenom, " +
                 "specialiste.libelle as specialite , villes_france_free.ville_nom_reel as ville, " +
                 "villes_france_free.ville_code_postal, medecin.adresse, medecin.telephone," +
-                " medecin.id FROM medecin INNER JOIN specialiste ON medecin.idSpecialiste = specialiste.id LEFT JOIN villes_france_free ON medecin.idVille = villes_france_free.ville_id ORDER BY medecin.nom";
+                " medecin.id FROM medecin INNER JOIN specialiste " +
+                "ON medecin.idSpecialiste = specialiste.id " +
+                "LEFT JOIN villes_france_free ON medecin.idVille = villes_france_free.ville_id ORDER BY medecin.nom";
             return Passerelle.Query(Manager.conenct(), sql);
         }
 
         //affichage d'un medecin précis pour le formulaire de modification
         static public List<string[]> SelectMedecin(int unId)
         {
-            string sql = "SELECT medecin.nom as nom, medecin.prenom as prenom, specialiste.libelle as specialite , villes_france_free.ville_nom_reel as ville, villes_france_free.ville_code_postal, medecin.adresse, medecin.telephone, medecin.id  FROM medecin INNER JOIN specialiste ON medecin.idSpecialiste = specialiste.id LEFT JOIN villes_france_free ON medecin.idVille = villes_france_free.ville_id WHERE medecin.id = '" + unId + "' ORDER BY medecin.nom ";
+            string sql = "SELECT medecin.nom as nom, medecin.prenom as prenom, " +
+                "specialiste.libelle as specialite , villes_france_free.ville_nom_reel as ville, " +
+                "villes_france_free.ville_code_postal, medecin.adresse, medecin.telephone, " +
+                "medecin.id FROM medecin INNER JOIN specialiste " +
+                "ON medecin.idSpecialiste = specialiste.id " +
+                "LEFT JOIN villes_france_free ON medecin.idVille = villes_france_free.ville_id " +
+                "WHERE medecin.id = '" + unId + "' ORDER BY medecin.nom ";
             return Passerelle.Query(Manager.conenct(), sql);
         }
 
-        //pour la modification d'un médecin j'ai besoin de son id
-        static public List<string[]> SelectIdMedecin(string nomMedecin, string prenomMedecin)
+        static public List<string[]> SelectIdRapportsPourMedecin(int idMedecin) 
         {
-            string sql = "SELECT medecin.nom as nom, medecin.prenom as prenom, specialiste.libelle as specialite , villes_france_free.ville_nom_reel as ville, villes_france_free.ville_code_postal, medecin.adresse, medecin.telephone  FROM medecin INNER JOIN specialiste ON medecin.idSpecialiste = specialiste.id LEFT JOIN villes_france_free ON medecin.idVille = villes_france_free.ville_id WHERE medecin.nom = '" + nomMedecin + "' AND  medecin.prenom = '" + prenomMedecin + "' ORDER BY medecin.nom ";
+            string sql = "SELECT rapport.id FROM rapport WHERE idMedecin = " + idMedecin + "";
             return Passerelle.Query(Manager.conenct(), sql);
-        }
+        } 
 
         //Récupération des spécialités pour le cbboxSpecialite
         static public List<string[]> SelectSpecialites()
@@ -133,13 +140,6 @@ namespace Manager
             return Passerelle.Query(Manager.conenct(), sql);
         }
 
-        //Récupération de la ville pour le cbboxVille d'un medic
-        static public List<string[]> SelectVilleMedic(int idVille)
-        {
-            string sql = "SELECT ville_nom_reel FROM villes_france_free WHERE ville_id = " + idVille ;
-            return Passerelle.Query(Manager.conenct(), sql);
-        }
-
         //Récupération de l'idVille pour l'Insert d'un nouveau médecin
         static public List<string[]> SelectIdVille(string nomVille, string cpVille)
         {
@@ -158,20 +158,14 @@ namespace Manager
         #region Rapports / Bilan
 
         // Affichage de la liste des rapoorts pour le médecin sélectionné
-        static public List<string[]> SelectRapports(string nomMedecin, string prenomMedecin)
-        {
-            string sql = "SELECT rapport.id, date, motif, bilan FROM rapport INNER JOIN medecin ON medecin.id = rapport.idMedecin  WHERE medecin.nom = '" + nomMedecin + "' AND  medecin.prenom = '" + prenomMedecin + "'";
-            return Passerelle.Query(Manager.conenct(), sql);
-        }
-
         static public List<string[]> SelectRapport(string idRapport)
         {
             string sql = "SELECT rapport.id, date, motif, bilan FROM rapport INNER JOIN medecin ON medecin.id = rapport.idMedecin  WHERE rapport.id = '" + idRapport + "'";
             return Passerelle.Query(Manager.conenct(), sql);
         }
-
+        
         //Affichage du "pop up" contenant la bilan d'un rapport selectionner avec son id
-        static public List<string[]> SelectBilanRapport(string idRapport)
+        static public List<string[]> SelectBilanRapport(int idRapport)
         {
             string sql = "SELECT bilan FROM rapport WHERE id ='" + idRapport + "'";
             return Passerelle.Query(Manager.conenct(), sql);
@@ -327,9 +321,9 @@ namespace Manager
         #region Medecins
 
         //Suppression d'un medecin avec son nom et prenom dans le formulaire
-        static public void DeleteMedecin(string unNom, string unPrenom)
+        static public void DeleteMedecin(int unId)
         {
-            string sql = "delete from medecin where nom = '" + unNom + "' and prenom = '" + unPrenom + "'";
+            string sql = "delete from medecin where medecin.id = '" + unId + "'";
             Passerelle.InsertUpdateDel(Manager.conenct(), sql);
         }
 
@@ -418,13 +412,21 @@ namespace Manager
             uneDate = uneDate.Replace("'", " ");
             uneDate = uneDate.Replace('"', ' ');
 
-            MessageBox.Show(Convert.ToString(id)); MessageBox.Show(uneDate); MessageBox.Show(unMotif); MessageBox.Show(unBilan);
             string sql = "UPDATE rapport SET rapport.motif = '" + unMotif + "' , rapport.bilan = '" + unBilan + "', rapport.date = '" + uneDate + "'  WHERE rapport.id = " + id ;
             Passerelle.InsertUpdateDel(Manager.conenct(), sql);
         }
 
         //Suppression d'un rapport avec son id et des ses échantillons associés
         static public void DeleteRapport(int unId)
+        {
+            string sql = "DELETE FROM offrir WHERE offrir.idRapport = '" + unId + "'";
+            Passerelle.InsertUpdateDel(Manager.conenct(), sql);
+            string supp = "DELETE FROM rapport WHERE rapport.id = '" + unId + "'";
+            Passerelle.InsertUpdateDel(Manager.conenct(), supp);
+        }
+
+        //Suppression des rapports et des échantillions en fonction d'un praticiens
+        static public void DeleteRapports(int unId)
         {
             string sql = "DELETE FROM offrir WHERE offrir.idRapport = '" + unId + "'";
             Passerelle.InsertUpdateDel(Manager.conenct(), sql);

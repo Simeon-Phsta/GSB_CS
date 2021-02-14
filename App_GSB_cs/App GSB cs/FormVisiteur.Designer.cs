@@ -37,8 +37,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.v_txbLogin = new System.Windows.Forms.TextBox();
-            this.v_txbMdp = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.v_txbNomVis = new System.Windows.Forms.TextBox();
@@ -50,6 +48,8 @@
             this.v_txbAdresse = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.v_txbCp = new System.Windows.Forms.TextBox();
+            this.v_txbLogin = new System.Windows.Forms.TextBox();
+            this.v_txbMdp = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -65,9 +65,9 @@
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(22, 29);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(742, 363);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
@@ -76,7 +76,7 @@
             // v_btnModifier
             // 
             this.v_btnModifier.Location = new System.Drawing.Point(447, 317);
-            this.v_btnModifier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.v_btnModifier.Margin = new System.Windows.Forms.Padding(2);
             this.v_btnModifier.Name = "v_btnModifier";
             this.v_btnModifier.Size = new System.Drawing.Size(246, 28);
             this.v_btnModifier.TabIndex = 24;
@@ -87,7 +87,7 @@
             // v_btnAnnuler
             // 
             this.v_btnAnnuler.Location = new System.Drawing.Point(592, 263);
-            this.v_btnAnnuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.v_btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.v_btnAnnuler.Name = "v_btnAnnuler";
             this.v_btnAnnuler.Size = new System.Drawing.Size(100, 28);
             this.v_btnAnnuler.TabIndex = 21;
@@ -98,7 +98,7 @@
             // v_btnValider
             // 
             this.v_btnValider.Location = new System.Drawing.Point(446, 263);
-            this.v_btnValider.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.v_btnValider.Margin = new System.Windows.Forms.Padding(2);
             this.v_btnValider.Name = "v_btnValider";
             this.v_btnValider.Size = new System.Drawing.Size(100, 28);
             this.v_btnValider.TabIndex = 20;
@@ -111,9 +111,9 @@
             this.groupBox3.Controls.Add(this.v_dtpEmbauche);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Location = new System.Drawing.Point(21, 253);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(366, 92);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
@@ -122,7 +122,7 @@
             // v_dtpEmbauche
             // 
             this.v_dtpEmbauche.Location = new System.Drawing.Point(146, 40);
-            this.v_dtpEmbauche.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.v_dtpEmbauche.Margin = new System.Windows.Forms.Padding(2);
             this.v_dtpEmbauche.Name = "v_dtpEmbauche";
             this.v_dtpEmbauche.Size = new System.Drawing.Size(205, 20);
             this.v_dtpEmbauche.TabIndex = 15;
@@ -139,14 +139,14 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.v_txbMdp);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.v_txbLogin);
-            this.groupBox4.Controls.Add(this.v_txbMdp);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Location = new System.Drawing.Point(410, 28);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(314, 167);
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
@@ -162,22 +162,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Login :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // v_txbLogin
-            // 
-            this.v_txbLogin.Location = new System.Drawing.Point(97, 52);
-            this.v_txbLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.v_txbLogin.Name = "v_txbLogin";
-            this.v_txbLogin.Size = new System.Drawing.Size(205, 20);
-            this.v_txbLogin.TabIndex = 13;
-            // 
-            // v_txbMdp
-            // 
-            this.v_txbMdp.Location = new System.Drawing.Point(97, 99);
-            this.v_txbMdp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.v_txbMdp.Name = "v_txbMdp";
-            this.v_txbMdp.Size = new System.Drawing.Size(205, 20);
-            this.v_txbMdp.TabIndex = 12;
             // 
             // label4
             // 
@@ -200,9 +184,9 @@
             this.groupBox2.Controls.Add(this.v_txbAdresse);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(21, 28);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(366, 207);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
@@ -211,7 +195,7 @@
             // v_txbNomVis
             // 
             this.v_txbNomVis.Location = new System.Drawing.Point(146, 46);
-            this.v_txbNomVis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.v_txbNomVis.Margin = new System.Windows.Forms.Padding(2);
             this.v_txbNomVis.Name = "v_txbNomVis";
             this.v_txbNomVis.Size = new System.Drawing.Size(205, 20);
             this.v_txbNomVis.TabIndex = 8;
@@ -220,7 +204,7 @@
             // 
             this.v_cbxVille.FormattingEnabled = true;
             this.v_cbxVille.Location = new System.Drawing.Point(146, 151);
-            this.v_cbxVille.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.v_cbxVille.Margin = new System.Windows.Forms.Padding(2);
             this.v_cbxVille.Name = "v_cbxVille";
             this.v_cbxVille.Size = new System.Drawing.Size(205, 21);
             this.v_cbxVille.TabIndex = 14;
@@ -238,7 +222,7 @@
             // v_txbPrenomVis
             // 
             this.v_txbPrenomVis.Location = new System.Drawing.Point(146, 80);
-            this.v_txbPrenomVis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.v_txbPrenomVis.Margin = new System.Windows.Forms.Padding(2);
             this.v_txbPrenomVis.Name = "v_txbPrenomVis";
             this.v_txbPrenomVis.Size = new System.Drawing.Size(205, 20);
             this.v_txbPrenomVis.TabIndex = 9;
@@ -267,7 +251,7 @@
             // v_txbAdresse
             // 
             this.v_txbAdresse.Location = new System.Drawing.Point(146, 116);
-            this.v_txbAdresse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.v_txbAdresse.Margin = new System.Windows.Forms.Padding(2);
             this.v_txbAdresse.Name = "v_txbAdresse";
             this.v_txbAdresse.Size = new System.Drawing.Size(205, 20);
             this.v_txbAdresse.TabIndex = 10;
@@ -285,10 +269,26 @@
             // v_txbCp
             // 
             this.v_txbCp.Location = new System.Drawing.Point(164, 192);
-            this.v_txbCp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.v_txbCp.Margin = new System.Windows.Forms.Padding(2);
             this.v_txbCp.Name = "v_txbCp";
             this.v_txbCp.Size = new System.Drawing.Size(205, 20);
             this.v_txbCp.TabIndex = 19;
+            // 
+            // v_txbLogin
+            // 
+            this.v_txbLogin.Location = new System.Drawing.Point(97, 52);
+            this.v_txbLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.v_txbLogin.Name = "v_txbLogin";
+            this.v_txbLogin.Size = new System.Drawing.Size(205, 20);
+            this.v_txbLogin.TabIndex = 13;
+            // 
+            // v_txbMdp
+            // 
+            this.v_txbMdp.Location = new System.Drawing.Point(97, 96);
+            this.v_txbMdp.Margin = new System.Windows.Forms.Padding(2);
+            this.v_txbMdp.Name = "v_txbMdp";
+            this.v_txbMdp.Size = new System.Drawing.Size(205, 20);
+            this.v_txbMdp.TabIndex = 14;
             // 
             // FormVisiteur
             // 
@@ -298,7 +298,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.v_txbCp);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormVisiteur";
@@ -335,10 +335,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox v_txbLogin;
-        private System.Windows.Forms.TextBox v_txbMdp;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox v_txbCp;
         private System.Windows.Forms.Button v_btnModifier;
+        private System.Windows.Forms.TextBox v_txbMdp;
+        private System.Windows.Forms.TextBox v_txbLogin;
     }
 }

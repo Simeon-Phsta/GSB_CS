@@ -95,8 +95,10 @@ namespace App_GSB_cs
             txtBxPrenom.Text = "";
             txtBxAdresse.Text = "";
             txtBxTelephone.Text = "";
+            txtBxIdMedecin.Text = "";
             cbbxSpecialite.SelectedIndex = 0;
             cbbxVille.SelectedIndex = 0;
+
 
         }
 
@@ -118,15 +120,14 @@ namespace App_GSB_cs
         #region Zone Medecin
 
         #region Selection Medecin
-        //Lors du clic de l'utilisateur sur une cellule du dtdv Medecins
-        private void dtgvAllMedics_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        //Lors du double clic de l'utilisateur sur une cellule du dtdv Medecins
+        private void dtgvAllMedics_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
             clearChampsRapport();
 
-           
+
             List<string[]> result = new List<string[]>();
-            //On essaye de prendre les informations de la ligne seléctionnée dans les cbbox et cbtxt
+            //On prends les informations de la ligne seléctionnée dans les cbbox et cbtxt
             result = Manager.Manager.SelectMedecin(Convert.ToInt32(dtgvAllMedics.Rows[e.RowIndex].Cells[7].Value));
             txtBxIdMedecin.Text = result[0][7];
             txtBxNom.Text = result[0][0];
@@ -140,7 +141,7 @@ namespace App_GSB_cs
             //On essaye de prendre les rapports liés au medecin sélectionné
             try
             {
-                List<string[]> temp = Manager.Manager.SelectRapports(txtBxNom.Text, txtBxPrenom.Text);
+                List<string[]> temp = Manager.Manager.SelectRapport(txtBxIdMedecin.Text);
                 if (temp != null)
                 {
                     foreach (string[] l in temp)
@@ -165,40 +166,49 @@ namespace App_GSB_cs
         //Au clique sur le btn clear
         private void btnClear_Click(object sender, EventArgs e)
         {
-            //On vide les champs (cf à la fonction vu en haut)
+            //On vide les champs (cf aux fonctions vu en haut)
             clearChampsMedecin();
+            clearChampsRapport();
+            MessageBox.Show("Vous avez vidé les champs.");
         }
         #endregion
 
         #region Bouton Supprimer Medecin
         //Au clique sur le btn supprimer
-        private void btnSupprimer_Click_1(object sender, EventArgs e)
+        private void btnSupprimerMedecin_Click(object sender, EventArgs e)
         {
-            //Tentative de suppression du medecin selectionner après vérification 
-            try
-            {
+            
+            //Tentative de suppression du medecin et de ses rapports selectionner après vérification 
+            //try
+            //{
+
                 DialogResult temp = MessageBox.Show("Voulez vous supprimer le praticien ? \r Cela supprime les rapports qui lui sont " +
                     "associés ! (", "Attention", MessageBoxButtons.YesNo);
                 if (temp == DialogResult.Yes)
                 {
+                List<string[]> resultat = Manager.Manager.SelectIdRapportsPourMedecin(Convert.ToInt32(txtBxIdMedecin.Text));
 
-                    Manager.Manager.DeleteMedecin(txtBxNom.Text, txtBxPrenom.Text);
+                foreach ( int el in resultat[el] )
+                    {
+                        Manager.Manager.DeleteRapport(Convert.ToInt32(el));
+                    }
+                    
+                    Manager.Manager.DeleteMedecin(Convert.ToInt32(txtBxIdMedecin.Text));
                     //Rechargement des données
                     reload();
+                    MessageBox.Show("Vous avez supprimé le ou la praticien(ne).", "Suppression");
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Vous ne pouvez pas supprimer un medecin qui a des rapports", "Erreur");
-            }
-
-
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Vous n'avez pas pu supprimé le ou la praticien(ne). Contactez l'administrateur.", "Erreur");
+            //}
         }
         #endregion
 
         #region Bouton Ajouter Medecin
         //Au clique du btn Ajouter
-        private void btnAjouter_Click_1(object sender, EventArgs e)
+        private void btnAjouterMedecin_Click(object sender, EventArgs e)
         {
             //On prends les données des différents cbbox et cbtxt
             string[] temp = cbbxVille.Text.Split('-');
@@ -209,21 +219,23 @@ namespace App_GSB_cs
             Manager.Manager.InsertMedecin(txtBxNom.Text, txtBxPrenom.Text, txtBxAdresse.Text, Manager.Manager.SelectIdVille(ville, cp)[0][0], txtBxTelephone.Text, Manager.Manager.SelectIdSpecialiste(cbbxSpecialite.Text)[0][0]);
             //On recharge le tout
             reload();
+            MessageBox.Show("Vous avez ajouté un ou une praticien(ne).");
         }
         #endregion
 
         #region Bonton Modifier Medecin
         //Au clique du btn Modifier
-        private void btnModifier_Click(object sender, EventArgs e)
+        private void btnModifierMedecin_Click(object sender, EventArgs e)
         {
             //On prends les données des différents cbbox et cbtxt puis on envoie la requête
             string[] temp = cbbxVille.Text.Split('-');
             string cp = temp[1].Substring(1);
             string ville = temp[0];
             ville = ville.Substring(0, ville.Length - 1);
-            Manager.Manager.ModifMedecin(txtBxNom.Text, txtBxPrenom.Text, txtBxAdresse.Text, Manager.Manager.SelectIdVille(ville, cp)[0][0], txtBxTelephone.Text, Manager.Manager.SelectIdSpecialiste(cbbxSpecialite.Text)[0][0], lastIdMedecin);
+            Manager.Manager.ModifMedecin(txtBxNom.Text, txtBxPrenom.Text, txtBxAdresse.Text, Manager.Manager.SelectIdVille(ville, cp)[0][0], txtBxTelephone.Text, Manager.Manager.SelectIdSpecialiste(cbbxSpecialite.Text)[0][0], Convert.ToInt32(txtBxIdMedecin.Text));
             //On recharge le tout 
             reload();
+            MessageBox.Show("Vous avez modifié le ou la praticien(ne)");
         }
         #endregion
 
@@ -234,54 +246,60 @@ namespace App_GSB_cs
         //Lors du clique de l'utilisateur sur une cellule d'un rapport dans le dtgv
         private void dtgvRapport_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {   // Si la cellule 
-                if (dtgvRapport.SelectedCells[0].Value == null)
-                {
-                    MessageBox.Show("La ligne est vide.");
-                }
-                else
-                {
-                    //On affiche un message box avec le libelle du rapport
-                    foreach (string[] l in Manager.Manager.SelectBilanRapport(dtgvRapport.SelectedCells[0].Value.ToString()))
-                    {
-                        MessageBox.Show(l[0]);
-                    }
-
-                    List<string[]> result = new List<string[]>();
-
-                    try
-                    {
-                        result = Manager.Manager.SelectRapport(dtgvRapport.SelectedCells[0].Value.ToString());
-                        txtBxIdRapport.Text = result[0][0];//id
-                        dtp.Value = Convert.ToDateTime( result[0][1]);//Date
-                        cbbxMotif.Text = result[0][2];//motif
-                        txtBxRapport.Text = result[0][3];//bilan
-
-                    }
-                    //Sinon on affiche une erreur
-                    catch
-                    {
-                        MessageBox.Show("Cliquez sur la case vide en début de ligne pour sélectionner un praticien", "Erreur");
-                    }
-                }
-
-            }
-            catch (Exception ex)
+            List<string[]> result = new List<string[]>();
+            
+            // Si la cellule est vide, on affiche le message d'erreur
+            if (dtgvRapport.Rows[e.RowIndex].Cells[0].Value == null)
             {
-                MessageBox.Show("Cliquez sur la première case vide en début de ligne", "erreur");
+                MessageBox.Show("La ligne est vide.", "Impossible");
             }
+            else
+            {
+
+                //On affiche un message box avec le libelle du rapport et on donne les données aux cbbox
+                result = Manager.Manager.SelectBilanRapport(Convert.ToInt32(dtgvRapport.Rows[e.RowIndex].Cells[0].Value)); 
+                MessageBox.Show(result[0][0]);
+                   
+                try
+                {
+                    result = Manager.Manager.SelectRapport(dtgvRapport.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    txtBxIdRapport.Text = result[0][0];//id
+                    dtp.Value = Convert.ToDateTime( result[0][1]);//Date
+                    cbbxMotif.Text = result[0][2];//motif
+                    txtBxRapport.Text = result[0][3];//bilan
+
+                }
+                //Sinon on affiche une erreur
+                catch
+                {
+                    MessageBox.Show("Cliquez sur la case vide en début de ligne pour sélectionner un praticien", "Erreur");
+                }
+            }
+
+
 
 
         }
         #endregion
 
         #region Bouton Modifier Rapport
+        //Au clique sur le bouton Modifier de la section rapport
         private void btnModifierRapport_Click(object sender, EventArgs e)
-        {         
-            Manager.Manager.UpdateRapport( Convert.ToInt32(txtBxIdRapport.Text), dtp.Text, cbbxMotif.Text, txtBxRapport.Text);
-            //On recharge le tout 
-            reload();
+        {
+            //Vérification d'un id de disponible
+            if (txtBxIdRapport.Text == null)
+            {
+                MessageBox.Show("Vous ne pouvez pas créer de rapport ici.\rVous devez vous rendre dans la partie Bilan visite.");
+            }
+            //Si c'est bon, on prends les données dans l'interface.
+            else
+            {
+                Manager.Manager.UpdateRapport(Convert.ToInt32(txtBxIdRapport.Text), dtp.Text, cbbxMotif.Text, txtBxRapport.Text);
+                //On recharge le tout 
+                reload();
+                MessageBox.Show("Vous avez modifié le rapport.");
+            }
+            
         }
         #endregion
 
@@ -289,6 +307,7 @@ namespace App_GSB_cs
         //Au clique du bouton supprimer dans la zone rapport
         private void btnSupprimerRapport_Click(object sender, EventArgs e)
         {
+            //Après confirmation de l'utilisateur, on supprime le rapport
             DialogResult temp = MessageBox.Show("Voulez vous supprimer ce rapport  ?", "Attention", MessageBoxButtons.YesNo);
             if (temp == DialogResult.Yes)
             {
@@ -296,15 +315,20 @@ namespace App_GSB_cs
                 Manager.Manager.DeleteRapport(Convert.ToInt32(txtBxIdRapport.Text));
                 //Rechargement des données
                 reload();
+                MessageBox.Show("Vous avez supprimé le rapport et ses échantillions.");
             }
         }
 
-        #endregion
+
+
+
 
         #endregion
 
         #endregion
 
-     
+        #endregion
+
+       
     }
 }

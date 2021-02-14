@@ -28,31 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSupprimerMedecin = new System.Windows.Forms.Button();
-            this.btnModifierMedecin = new System.Windows.Forms.Button();
-            this.txtBxPrenom = new System.Windows.Forms.TextBox();
             this.gbMedecin = new System.Windows.Forms.GroupBox();
             this.txtBxIdMedecin = new System.Windows.Forms.TextBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.cbbxVille = new System.Windows.Forms.ComboBox();
-            this.txtBxTelephone = new System.Windows.Forms.TextBox();
             this.lblTelephone = new System.Windows.Forms.Label();
-            this.cbbxSpecialite = new System.Windows.Forms.ComboBox();
             this.lblNom = new System.Windows.Forms.Label();
             this.txtBxNom = new System.Windows.Forms.TextBox();
             this.lblPrenom = new System.Windows.Forms.Label();
-            this.btnAjouterMedecin = new System.Windows.Forms.Button();
             this.lblVille = new System.Windows.Forms.Label();
             this.lblAdresse = new System.Windows.Forms.Label();
-            this.txtBxAdresse = new System.Windows.Forms.TextBox();
             this.lblSpecialite = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvAllMedics = new System.Windows.Forms.DataGridView();
+            this.nomMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenomMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.speMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.villeMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpVille = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresseMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgvRapport = new System.Windows.Forms.DataGridView();
-            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDerniereVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motifVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rapport_visite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbRapport = new System.Windows.Forms.GroupBox();
             this.dtp = new System.Windows.Forms.DateTimePicker();
             this.cbbxMotif = new System.Windows.Forms.ComboBox();
@@ -63,66 +58,44 @@
             this.txtBxRapport = new System.Windows.Forms.TextBox();
             this.lblMotif = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.nomMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenomMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.villeMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpVille = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresseMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDerniereVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.motifVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rapport_visite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBxPrenom = new System.Windows.Forms.TextBox();
+            this.cbbxVille = new System.Windows.Forms.ComboBox();
+            this.txtBxAdresse = new System.Windows.Forms.TextBox();
+            this.cbbxSpecialite = new System.Windows.Forms.ComboBox();
+            this.txtBxTelephone = new System.Windows.Forms.TextBox();
+            this.btnAjouterMedecin = new System.Windows.Forms.Button();
+            this.btnSupprimerMedecin = new System.Windows.Forms.Button();
+            this.btnModifierMedecin = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.gbMedecin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAllMedics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRapport)).BeginInit();
             this.gbRapport.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnSupprimerMedecin
-            // 
-            this.btnSupprimerMedecin.Location = new System.Drawing.Point(158, 250);
-            this.btnSupprimerMedecin.Name = "btnSupprimerMedecin";
-            this.btnSupprimerMedecin.Size = new System.Drawing.Size(100, 23);
-            this.btnSupprimerMedecin.TabIndex = 37;
-            this.btnSupprimerMedecin.Text = "Supprimer";
-            this.btnSupprimerMedecin.UseVisualStyleBackColor = true;
-            this.btnSupprimerMedecin.Click += new System.EventHandler(this.btnSupprimer_Click_1);
-            // 
-            // btnModifierMedecin
-            // 
-            this.btnModifierMedecin.Location = new System.Drawing.Point(29, 279);
-            this.btnModifierMedecin.Name = "btnModifierMedecin";
-            this.btnModifierMedecin.Size = new System.Drawing.Size(100, 23);
-            this.btnModifierMedecin.TabIndex = 36;
-            this.btnModifierMedecin.Text = "Modifier";
-            this.btnModifierMedecin.UseVisualStyleBackColor = true;
-            this.btnModifierMedecin.Click += new System.EventHandler(this.btnModifier_Click);
-            // 
-            // txtBxPrenom
-            // 
-            this.txtBxPrenom.Location = new System.Drawing.Point(110, 82);
-            this.txtBxPrenom.Name = "txtBxPrenom";
-            this.txtBxPrenom.Size = new System.Drawing.Size(148, 20);
-            this.txtBxPrenom.TabIndex = 10;
-            // 
             // gbMedecin
             // 
-            this.gbMedecin.Controls.Add(this.txtBxIdMedecin);
             this.gbMedecin.Controls.Add(this.btnClear);
-            this.gbMedecin.Controls.Add(this.cbbxVille);
-            this.gbMedecin.Controls.Add(this.btnSupprimerMedecin);
-            this.gbMedecin.Controls.Add(this.txtBxTelephone);
             this.gbMedecin.Controls.Add(this.btnModifierMedecin);
-            this.gbMedecin.Controls.Add(this.lblTelephone);
+            this.gbMedecin.Controls.Add(this.btnSupprimerMedecin);
+            this.gbMedecin.Controls.Add(this.btnAjouterMedecin);
+            this.gbMedecin.Controls.Add(this.txtBxTelephone);
             this.gbMedecin.Controls.Add(this.cbbxSpecialite);
+            this.gbMedecin.Controls.Add(this.txtBxAdresse);
+            this.gbMedecin.Controls.Add(this.cbbxVille);
+            this.gbMedecin.Controls.Add(this.txtBxPrenom);
+            this.gbMedecin.Controls.Add(this.txtBxIdMedecin);
+            this.gbMedecin.Controls.Add(this.lblTelephone);
             this.gbMedecin.Controls.Add(this.lblNom);
             this.gbMedecin.Controls.Add(this.txtBxNom);
             this.gbMedecin.Controls.Add(this.lblPrenom);
-            this.gbMedecin.Controls.Add(this.btnAjouterMedecin);
             this.gbMedecin.Controls.Add(this.lblVille);
             this.gbMedecin.Controls.Add(this.lblAdresse);
-            this.gbMedecin.Controls.Add(this.txtBxAdresse);
             this.gbMedecin.Controls.Add(this.lblSpecialite);
-            this.gbMedecin.Controls.Add(this.txtBxPrenom);
             this.gbMedecin.Location = new System.Drawing.Point(910, 12);
             this.gbMedecin.Name = "gbMedecin";
             this.gbMedecin.Size = new System.Drawing.Size(283, 308);
@@ -139,31 +112,6 @@
             this.txtBxIdMedecin.Size = new System.Drawing.Size(148, 20);
             this.txtBxIdMedecin.TabIndex = 41;
             // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(158, 279);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(100, 23);
-            this.btnClear.TabIndex = 39;
-            this.btnClear.Text = "Vider les champs";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // cbbxVille
-            // 
-            this.cbbxVille.FormattingEnabled = true;
-            this.cbbxVille.Location = new System.Drawing.Point(110, 118);
-            this.cbbxVille.Name = "cbbxVille";
-            this.cbbxVille.Size = new System.Drawing.Size(148, 21);
-            this.cbbxVille.TabIndex = 22;
-            // 
-            // txtBxTelephone
-            // 
-            this.txtBxTelephone.Location = new System.Drawing.Point(110, 224);
-            this.txtBxTelephone.Name = "txtBxTelephone";
-            this.txtBxTelephone.Size = new System.Drawing.Size(148, 20);
-            this.txtBxTelephone.TabIndex = 21;
-            // 
             // lblTelephone
             // 
             this.lblTelephone.AutoSize = true;
@@ -172,14 +120,6 @@
             this.lblTelephone.Size = new System.Drawing.Size(58, 13);
             this.lblTelephone.TabIndex = 20;
             this.lblTelephone.Text = "Téléphone";
-            // 
-            // cbbxSpecialite
-            // 
-            this.cbbxSpecialite.FormattingEnabled = true;
-            this.cbbxSpecialite.Location = new System.Drawing.Point(110, 191);
-            this.cbbxSpecialite.Name = "cbbxSpecialite";
-            this.cbbxSpecialite.Size = new System.Drawing.Size(148, 21);
-            this.cbbxSpecialite.TabIndex = 19;
             // 
             // lblNom
             // 
@@ -206,16 +146,6 @@
             this.lblPrenom.TabIndex = 6;
             this.lblPrenom.Text = "Prénom";
             // 
-            // btnAjouterMedecin
-            // 
-            this.btnAjouterMedecin.Location = new System.Drawing.Point(29, 250);
-            this.btnAjouterMedecin.Name = "btnAjouterMedecin";
-            this.btnAjouterMedecin.Size = new System.Drawing.Size(100, 23);
-            this.btnAjouterMedecin.TabIndex = 14;
-            this.btnAjouterMedecin.Text = "Ajouter";
-            this.btnAjouterMedecin.UseVisualStyleBackColor = true;
-            this.btnAjouterMedecin.Click += new System.EventHandler(this.btnAjouter_Click_1);
-            // 
             // lblVille
             // 
             this.lblVille.AutoSize = true;
@@ -233,13 +163,6 @@
             this.lblAdresse.Size = new System.Drawing.Size(45, 13);
             this.lblAdresse.TabIndex = 8;
             this.lblAdresse.Text = "Adresse";
-            // 
-            // txtBxAdresse
-            // 
-            this.txtBxAdresse.Location = new System.Drawing.Point(110, 156);
-            this.txtBxAdresse.Name = "txtBxAdresse";
-            this.txtBxAdresse.Size = new System.Drawing.Size(148, 20);
-            this.txtBxAdresse.TabIndex = 12;
             // 
             // lblSpecialite
             // 
@@ -274,7 +197,48 @@
             this.dtgvAllMedics.Name = "dtgvAllMedics";
             this.dtgvAllMedics.Size = new System.Drawing.Size(843, 308);
             this.dtgvAllMedics.TabIndex = 32;
-            this.dtgvAllMedics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvAllMedics_CellContentClick_1);
+            this.dtgvAllMedics.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvAllMedics_CellContentDoubleClick);
+            // 
+            // nomMedecin
+            // 
+            this.nomMedecin.HeaderText = "Nom";
+            this.nomMedecin.Name = "nomMedecin";
+            // 
+            // prenomMedecin
+            // 
+            this.prenomMedecin.HeaderText = "Prénom";
+            this.prenomMedecin.Name = "prenomMedecin";
+            // 
+            // speMedecin
+            // 
+            this.speMedecin.HeaderText = "Spécialité";
+            this.speMedecin.Name = "speMedecin";
+            // 
+            // villeMedecin
+            // 
+            this.villeMedecin.HeaderText = "Ville";
+            this.villeMedecin.Name = "villeMedecin";
+            // 
+            // cpVille
+            // 
+            this.cpVille.HeaderText = "Code Postal";
+            this.cpVille.Name = "cpVille";
+            // 
+            // adresseMedecin
+            // 
+            this.adresseMedecin.HeaderText = "Adresse";
+            this.adresseMedecin.Name = "adresseMedecin";
+            // 
+            // telephone
+            // 
+            this.telephone.HeaderText = "Téléphone";
+            this.telephone.Name = "telephone";
+            // 
+            // idMedecin
+            // 
+            this.idMedecin.HeaderText = "Id";
+            this.idMedecin.Name = "idMedecin";
+            this.idMedecin.Visible = false;
             // 
             // dtgvRapport
             // 
@@ -290,32 +254,6 @@
             this.dtgvRapport.Size = new System.Drawing.Size(843, 253);
             this.dtgvRapport.TabIndex = 34;
             this.dtgvRapport.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvRapport_CellClick);
-            // 
-            // clmId
-            // 
-            this.clmId.HeaderText = "Id de la visite";
-            this.clmId.MinimumWidth = 10;
-            this.clmId.Name = "clmId";
-            this.clmId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clmId.Visible = false;
-            // 
-            // dateDerniereVisite
-            // 
-            this.dateDerniereVisite.HeaderText = "Date de la derniere visite";
-            this.dateDerniereVisite.Name = "dateDerniereVisite";
-            this.dateDerniereVisite.Width = 175;
-            // 
-            // motifVisite
-            // 
-            this.motifVisite.HeaderText = "Motif de la Visite";
-            this.motifVisite.Name = "motifVisite";
-            this.motifVisite.Width = 175;
-            // 
-            // rapport_visite
-            // 
-            this.rapport_visite.HeaderText = "Rapport de la visite";
-            this.rapport_visite.Name = "rapport_visite";
-            this.rapport_visite.Width = 175;
             // 
             // gbRapport
             // 
@@ -413,46 +351,106 @@
             this.lblDate.TabIndex = 2;
             this.lblDate.Text = "Date";
             // 
-            // nomMedecin
+            // clmId
             // 
-            this.nomMedecin.HeaderText = "Nom";
-            this.nomMedecin.Name = "nomMedecin";
+            this.clmId.HeaderText = "Id de la visite";
+            this.clmId.MinimumWidth = 10;
+            this.clmId.Name = "clmId";
+            this.clmId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // prenomMedecin
+            // dateDerniereVisite
             // 
-            this.prenomMedecin.HeaderText = "Prénom";
-            this.prenomMedecin.Name = "prenomMedecin";
+            this.dateDerniereVisite.HeaderText = "Date de la derniere visite";
+            this.dateDerniereVisite.Name = "dateDerniereVisite";
+            this.dateDerniereVisite.Width = 175;
             // 
-            // speMedecin
+            // motifVisite
             // 
-            this.speMedecin.HeaderText = "Spécialité";
-            this.speMedecin.Name = "speMedecin";
+            this.motifVisite.HeaderText = "Motif de la Visite";
+            this.motifVisite.Name = "motifVisite";
+            this.motifVisite.Width = 175;
             // 
-            // villeMedecin
+            // rapport_visite
             // 
-            this.villeMedecin.HeaderText = "Ville";
-            this.villeMedecin.Name = "villeMedecin";
+            this.rapport_visite.HeaderText = "Rapport de la visite";
+            this.rapport_visite.Name = "rapport_visite";
+            this.rapport_visite.Width = 175;
             // 
-            // cpVille
+            // txtBxPrenom
             // 
-            this.cpVille.HeaderText = "Code Postal";
-            this.cpVille.Name = "cpVille";
+            this.txtBxPrenom.Location = new System.Drawing.Point(110, 82);
+            this.txtBxPrenom.Name = "txtBxPrenom";
+            this.txtBxPrenom.Size = new System.Drawing.Size(148, 20);
+            this.txtBxPrenom.TabIndex = 42;
             // 
-            // adresseMedecin
+            // cbbxVille
             // 
-            this.adresseMedecin.HeaderText = "Adresse";
-            this.adresseMedecin.Name = "adresseMedecin";
+            this.cbbxVille.FormattingEnabled = true;
+            this.cbbxVille.Location = new System.Drawing.Point(110, 118);
+            this.cbbxVille.Name = "cbbxVille";
+            this.cbbxVille.Size = new System.Drawing.Size(148, 21);
+            this.cbbxVille.TabIndex = 43;
             // 
-            // telephone
+            // txtBxAdresse
             // 
-            this.telephone.HeaderText = "Téléphone";
-            this.telephone.Name = "telephone";
+            this.txtBxAdresse.Location = new System.Drawing.Point(110, 152);
+            this.txtBxAdresse.Name = "txtBxAdresse";
+            this.txtBxAdresse.Size = new System.Drawing.Size(148, 20);
+            this.txtBxAdresse.TabIndex = 44;
             // 
-            // idMedecin
+            // cbbxSpecialite
             // 
-            this.idMedecin.HeaderText = "Id";
-            this.idMedecin.Name = "idMedecin";
-            this.idMedecin.Visible = false;
+            this.cbbxSpecialite.FormattingEnabled = true;
+            this.cbbxSpecialite.Location = new System.Drawing.Point(110, 186);
+            this.cbbxSpecialite.Name = "cbbxSpecialite";
+            this.cbbxSpecialite.Size = new System.Drawing.Size(148, 21);
+            this.cbbxSpecialite.TabIndex = 45;
+            // 
+            // txtBxTelephone
+            // 
+            this.txtBxTelephone.Location = new System.Drawing.Point(110, 224);
+            this.txtBxTelephone.Name = "txtBxTelephone";
+            this.txtBxTelephone.Size = new System.Drawing.Size(148, 20);
+            this.txtBxTelephone.TabIndex = 46;
+            // 
+            // btnAjouterMedecin
+            // 
+            this.btnAjouterMedecin.Location = new System.Drawing.Point(29, 250);
+            this.btnAjouterMedecin.Name = "btnAjouterMedecin";
+            this.btnAjouterMedecin.Size = new System.Drawing.Size(100, 23);
+            this.btnAjouterMedecin.TabIndex = 47;
+            this.btnAjouterMedecin.Text = "Ajouter";
+            this.btnAjouterMedecin.UseVisualStyleBackColor = true;
+            this.btnAjouterMedecin.Click += new System.EventHandler(this.btnAjouterMedecin_Click);
+            // 
+            // btnSupprimerMedecin
+            // 
+            this.btnSupprimerMedecin.Location = new System.Drawing.Point(158, 250);
+            this.btnSupprimerMedecin.Name = "btnSupprimerMedecin";
+            this.btnSupprimerMedecin.Size = new System.Drawing.Size(109, 23);
+            this.btnSupprimerMedecin.TabIndex = 48;
+            this.btnSupprimerMedecin.Text = "Supprimer";
+            this.btnSupprimerMedecin.UseVisualStyleBackColor = true;
+            this.btnSupprimerMedecin.Click += new System.EventHandler(this.btnSupprimerMedecin_Click);
+            // 
+            // btnModifierMedecin
+            // 
+            this.btnModifierMedecin.Location = new System.Drawing.Point(29, 279);
+            this.btnModifierMedecin.Name = "btnModifierMedecin";
+            this.btnModifierMedecin.Size = new System.Drawing.Size(100, 23);
+            this.btnModifierMedecin.TabIndex = 49;
+            this.btnModifierMedecin.Text = "Modifier";
+            this.btnModifierMedecin.UseVisualStyleBackColor = true;
+            this.btnModifierMedecin.Click += new System.EventHandler(this.btnModifierMedecin_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(158, 279);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(109, 23);
+            this.btnClear.TabIndex = 50;
+            this.btnClear.Text = "Vider les champs";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
             // FormMedecins
             // 
@@ -483,33 +481,20 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSupprimerMedecin;
-        private System.Windows.Forms.Button btnModifierMedecin;
-        private System.Windows.Forms.TextBox txtBxPrenom;
         private System.Windows.Forms.GroupBox gbMedecin;
-        private System.Windows.Forms.ComboBox cbbxSpecialite;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.TextBox txtBxNom;
         private System.Windows.Forms.Label lblPrenom;
-        private System.Windows.Forms.Button btnAjouterMedecin;
         private System.Windows.Forms.Label lblVille;
         private System.Windows.Forms.Label lblAdresse;
-        private System.Windows.Forms.TextBox txtBxAdresse;
         private System.Windows.Forms.Label lblSpecialite;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtgvAllMedics;
         private System.Windows.Forms.DataGridView dtgvRapport;
         private System.Windows.Forms.Label lblTelephone;
-        private System.Windows.Forms.TextBox txtBxTelephone;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.ComboBox cbbxVille;
         private System.Windows.Forms.GroupBox gbRapport;
         private System.Windows.Forms.Label lblMotif;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDerniereVisite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn motifVisite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rapport_visite;
         private System.Windows.Forms.Button btnSupprimerRapport;
         private System.Windows.Forms.Button btnModifierRapport;
         private System.Windows.Forms.Label label2;
@@ -526,5 +511,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn adresseMedecin;
         private System.Windows.Forms.DataGridViewTextBoxColumn telephone;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMedecin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDerniereVisite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn motifVisite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rapport_visite;
+        private System.Windows.Forms.ComboBox cbbxSpecialite;
+        private System.Windows.Forms.TextBox txtBxAdresse;
+        private System.Windows.Forms.ComboBox cbbxVille;
+        private System.Windows.Forms.TextBox txtBxPrenom;
+        private System.Windows.Forms.TextBox txtBxTelephone;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnModifierMedecin;
+        private System.Windows.Forms.Button btnSupprimerMedecin;
+        private System.Windows.Forms.Button btnAjouterMedecin;
     }
 }
