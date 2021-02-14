@@ -110,7 +110,15 @@ namespace Manager
         {
             string sql = "SELECT rapport.id FROM rapport WHERE idMedecin = " + idMedecin + "";
             return Passerelle.Query(Manager.conenct(), sql);
-        } 
+        }
+
+        static public List<string[]> SelectRapports(int idMedecin)
+        {
+            string sql = "SELECT rapport.id, date, motif, bilan " +
+                "FROM rapport INNER JOIN medecin ON medecin.id = rapport.idMedecin  " +
+                "WHERE rapport.idMedecin = '" + idMedecin + "'";
+            return Passerelle.Query(Manager.conenct(), sql);
+        }
 
         //Récupération des spécialités pour le cbboxSpecialite
         static public List<string[]> SelectSpecialites()
@@ -158,7 +166,7 @@ namespace Manager
         #region Rapports / Bilan
 
         // Affichage de la liste des rapoorts pour le médecin sélectionné
-        static public List<string[]> SelectRapport(string idRapport)
+        static public List<string[]> SelectRapport(int idRapport)
         {
             string sql = "SELECT rapport.id, date, motif, bilan FROM rapport INNER JOIN medecin ON medecin.id = rapport.idMedecin  WHERE rapport.id = '" + idRapport + "'";
             return Passerelle.Query(Manager.conenct(), sql);

@@ -139,9 +139,8 @@ namespace App_GSB_cs
 
 
             //On essaye de prendre les rapports liés au medecin sélectionné
-            try
-            {
-                List<string[]> temp = Manager.Manager.SelectRapport(txtBxIdMedecin.Text);
+
+                List<string[]> temp = Manager.Manager.SelectRapports(Convert.ToInt32(result[0][7]));
                 if (temp != null)
                 {
                     foreach (string[] l in temp)
@@ -152,13 +151,6 @@ namespace App_GSB_cs
                         }
                     }
                 }
-
-            }
-            //Sinon on affiche l'erreur
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
         }
         #endregion
 
@@ -186,17 +178,17 @@ namespace App_GSB_cs
                     "associés ! (", "Attention", MessageBoxButtons.YesNo);
                 if (temp == DialogResult.Yes)
                 {
-                List<string[]> resultat = Manager.Manager.SelectIdRapportsPourMedecin(Convert.ToInt32(txtBxIdMedecin.Text));
+                    List<string[]> resultats = Manager.Manager.SelectIdRapportsPourMedecin(Convert.ToInt32(txtBxIdMedecin.Text));
 
-                foreach ( int el in resultat[el] )
+                    foreach( string[] resultat in resultats)
                     {
-                        Manager.Manager.DeleteRapport(Convert.ToInt32(el));
+                    Manager.Manager.DeleteRapport(Convert.ToInt32(resultat[0]));
                     }
-                    
+
                     Manager.Manager.DeleteMedecin(Convert.ToInt32(txtBxIdMedecin.Text));
                     //Rechargement des données
                     reload();
-                    MessageBox.Show("Vous avez supprimé le ou la praticien(ne).", "Suppression");
+                        MessageBox.Show("Vous avez supprimé le ou la praticien(ne).", "Suppression");
                 }
             //}
             //catch
@@ -262,7 +254,7 @@ namespace App_GSB_cs
                    
                 try
                 {
-                    result = Manager.Manager.SelectRapport(dtgvRapport.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    result = Manager.Manager.SelectRapport(Convert.ToInt32(dtgvRapport.Rows[e.RowIndex].Cells[0].Value.ToString()));
                     txtBxIdRapport.Text = result[0][0];//id
                     dtp.Value = Convert.ToDateTime( result[0][1]);//Date
                     cbbxMotif.Text = result[0][2];//motif
