@@ -235,7 +235,7 @@ namespace App_GSB_cs
         private void dtgvRapport_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
-            {
+            {   // Si la cellule 
                 if (dtgvRapport.SelectedCells[0].Value == null)
                 {
                     MessageBox.Show("La ligne est vide.");
@@ -278,14 +278,7 @@ namespace App_GSB_cs
 
         #region Bouton Modifier Rapport
         private void btnModifierRapport_Click(object sender, EventArgs e)
-        {
-
-            MessageBox.Show(txtBxIdRapport.Text);
-            MessageBox.Show(dtp.Text);
-            MessageBox.Show(cbbxMotif.Text);
-            MessageBox.Show(txtBxRapport.Text);
-            
-
+        {         
             Manager.Manager.UpdateRapport( Convert.ToInt32(txtBxIdRapport.Text), dtp.Text, cbbxMotif.Text, txtBxRapport.Text);
             //On recharge le tout 
             reload();
@@ -296,10 +289,6 @@ namespace App_GSB_cs
         //Au clique du bouton supprimer dans la zone rapport
         private void btnSupprimerRapport_Click(object sender, EventArgs e)
         {
-
-            //Tentative de suppression du rapport sélectionné après vérification 
-            //try
-            //{
             DialogResult temp = MessageBox.Show("Voulez vous supprimer ce rapport  ?", "Attention", MessageBoxButtons.YesNo);
             if (temp == DialogResult.Yes)
             {
@@ -308,14 +297,7 @@ namespace App_GSB_cs
                 //Rechargement des données
                 reload();
             }
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Problème lors de la suppression", "Erreur");
-            //}
         }
-
-
 
         #endregion
 

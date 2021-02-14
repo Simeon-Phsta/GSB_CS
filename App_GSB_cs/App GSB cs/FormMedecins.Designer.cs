@@ -48,14 +48,6 @@
             this.lblSpecialite = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvAllMedics = new System.Windows.Forms.DataGridView();
-            this.nomMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenomMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.villeMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpVille = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresseMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgvRapport = new System.Windows.Forms.DataGridView();
             this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDerniereVisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +63,14 @@
             this.txtBxRapport = new System.Windows.Forms.TextBox();
             this.lblMotif = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.nomMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenomMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.speMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.villeMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpVille = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresseMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idMedecin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbMedecin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAllMedics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRapport)).BeginInit();
@@ -276,46 +276,6 @@
             this.dtgvAllMedics.TabIndex = 32;
             this.dtgvAllMedics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvAllMedics_CellContentClick_1);
             // 
-            // nomMedecin
-            // 
-            this.nomMedecin.HeaderText = "Nom";
-            this.nomMedecin.Name = "nomMedecin";
-            // 
-            // prenomMedecin
-            // 
-            this.prenomMedecin.HeaderText = "Prénom";
-            this.prenomMedecin.Name = "prenomMedecin";
-            // 
-            // speMedecin
-            // 
-            this.speMedecin.HeaderText = "Spécialité";
-            this.speMedecin.Name = "speMedecin";
-            // 
-            // villeMedecin
-            // 
-            this.villeMedecin.HeaderText = "Ville";
-            this.villeMedecin.Name = "villeMedecin";
-            // 
-            // cpVille
-            // 
-            this.cpVille.HeaderText = "Code Postal";
-            this.cpVille.Name = "cpVille";
-            // 
-            // adresseMedecin
-            // 
-            this.adresseMedecin.HeaderText = "Adresse";
-            this.adresseMedecin.Name = "adresseMedecin";
-            // 
-            // telephone
-            // 
-            this.telephone.HeaderText = "Téléphone";
-            this.telephone.Name = "telephone";
-            // 
-            // idMedecin
-            // 
-            this.idMedecin.HeaderText = "Id";
-            this.idMedecin.Name = "idMedecin";
-            // 
             // dtgvRapport
             // 
             this.dtgvRapport.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -452,6 +412,47 @@
             this.lblDate.Size = new System.Drawing.Size(30, 13);
             this.lblDate.TabIndex = 2;
             this.lblDate.Text = "Date";
+            // 
+            // nomMedecin
+            // 
+            this.nomMedecin.HeaderText = "Nom";
+            this.nomMedecin.Name = "nomMedecin";
+            // 
+            // prenomMedecin
+            // 
+            this.prenomMedecin.HeaderText = "Prénom";
+            this.prenomMedecin.Name = "prenomMedecin";
+            // 
+            // speMedecin
+            // 
+            this.speMedecin.HeaderText = "Spécialité";
+            this.speMedecin.Name = "speMedecin";
+            // 
+            // villeMedecin
+            // 
+            this.villeMedecin.HeaderText = "Ville";
+            this.villeMedecin.Name = "villeMedecin";
+            // 
+            // cpVille
+            // 
+            this.cpVille.HeaderText = "Code Postal";
+            this.cpVille.Name = "cpVille";
+            // 
+            // adresseMedecin
+            // 
+            this.adresseMedecin.HeaderText = "Adresse";
+            this.adresseMedecin.Name = "adresseMedecin";
+            // 
+            // telephone
+            // 
+            this.telephone.HeaderText = "Téléphone";
+            this.telephone.Name = "telephone";
+            // 
+            // idMedecin
+            // 
+            this.idMedecin.HeaderText = "Id";
+            this.idMedecin.Name = "idMedecin";
+            this.idMedecin.Visible = false;
             // 
             // FormMedecins
             // 
