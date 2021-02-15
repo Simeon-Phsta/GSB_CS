@@ -30,20 +30,22 @@ namespace pass
             cmd.Connection = conn;
             cmd.CommandText = sql;
             conn.Open();
+
             using (DbDataReader reader = cmd.ExecuteReader())
             {
-                if (reader.HasRows)
+                
+                if (reader.HasRows )
                 {
-                    List<string[]>temp = new List<string[]>();
+                    List<string[]> temp = new List<string[]>();
                     int count = 0;
                     while (reader.Read())
                     {
                         count = 0;
                         string[] tempe = new string[reader.FieldCount];
-                        for(int i = 0;i < reader.FieldCount ; i++)
+                        for (int i = 0; i < reader.FieldCount; i++)
                         {
                             tempe[count] = reader.GetString(i);
-                            count ++;
+                            count++;
                         }
                         temp.Add(tempe);
                     }

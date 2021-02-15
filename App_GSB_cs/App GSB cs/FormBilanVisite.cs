@@ -183,114 +183,109 @@ namespace App_GSB_cs
                         else
                         {
                             //si tout se passe bien
-                            //try
-                            //{
-                                string praticien = bv_cbxNomMed.Text; //on récupère le nom du praticien
-                                praticien = praticien.Substring(0, praticien.IndexOf('-') - 1); //on sépare nom prenom du praticen avec sa région
-                                string[] temp1 = praticien.Split(' '); //on sépare le nom et le prénom
-                                string nomPraticien = temp1[0]; //nom praticien
-                                string prenomPraticien = temp1[1]; //prenom praticien
+                        
+                            string praticien = bv_cbxNomMed.Text; //on récupère le nom du praticien
+                            praticien = praticien.Substring(0, praticien.IndexOf('-') - 1); //on sépare nom prenom du praticen avec sa région
+                            string[] temp1 = praticien.Split(' '); //on sépare le nom et le prénom
+                            string nomPraticien = temp1[0]; //nom praticien
+                            string prenomPraticien = temp1[1]; //prenom praticien
 
-                                string visiteur = bv_cbxNomVis.Text; //on récupère le nom du visiteur
-                                string[] temp2 = visiteur.Split(' '); // on sépare le nom et le prenom
-                                string nomVisiteur = temp2[0]; //nom visiteur
-                                string prenomVisiteur = temp2[1]; //prenom visiteur
+                            string visiteur = bv_cbxNomVis.Text; //on récupère le nom du visiteur
+                            string[] temp2 = visiteur.Split(' '); // on sépare le nom et le prenom
+                            string nomVisiteur = temp2[0]; //nom visiteur
+                            string prenomVisiteur = temp2[1]; //prenom visiteur
 
-                                string date = bv_dtpDateVis.Text; //date visite
+                            string date = bv_dtpDateVis.Text; //date visite
 
-                                string motif = bv_cbxMotifVis.Text; // motif
+                            string motif = bv_cbxMotifVis.Text; // motif
 
-                                string impact = bv_txbImpact.Text; //impact de la visite
+                            string impact = bv_txbImpact.Text; //impact de la visite
 
-                                //on recupere id du praticien
-                                List<string[]> idP = new List<string[]>();
-                                idP = Manager.Manager.SelectIDpraticien(nomPraticien, prenomPraticien);
+                            //on recupere id du praticien
+                            List<string[]> idP = new List<string[]>();
+                            idP = Manager.Manager.SelectIDpraticien(nomPraticien, prenomPraticien);
 
-                                //on recupere id du visiteur
-                                List<string[]> idV = new List<string[]>();
-                                idV = Manager.Manager.SelectIDvisiteur(nomVisiteur, prenomVisiteur);
+                            //on recupere id du visiteur
+                            List<string[]> idV = new List<string[]>();
+                            idV = Manager.Manager.SelectIDvisiteur(nomVisiteur, prenomVisiteur);
 
-                                Manager.Manager.AddBilanVisite(idP[0][0], idV[0][0], date, motif, impact); //on ajoute le bilan dans la table rapport
+                            Manager.Manager.AddBilanVisite(idP[0][0], idV[0][0], date, motif, impact); //on ajoute le bilan dans la table rapport
 
-                                //on affiche un message pour l'utilisateur
-                                MessageBox.Show("Le bilan a bien été ajouté.", "Avertissement");
+                            //on affiche un message pour l'utilisateur
+                            MessageBox.Show("Le bilan a bien été ajouté.", "Avertissement");
 
-                                //on regarde si des échantillons ont été offerts
+                                
+                            
+                        //on regarde si des échantillons ont été offerts
 
-                                //on convertit en int les id du praticien et du visiteur
-                                int idp = Convert.ToInt16(idP[0][0]);
-                                int idv = Convert.ToInt16(idV[0][0]);
+                            //on convertit en int les id du praticien et du visiteur
+                            int idp = Convert.ToInt16(idP[0][0]);
+                            int idv = Convert.ToInt16(idV[0][0]);
 
-                                //on vérifie si les combo et textbox sont vides ou non
-                                if (bv_cbx1NomEchantillon.Text != "" && bv_txb1Quantite.Text != "")
-                                {
-                                    string nomE1 = bv_cbx1NomEchantillon.Text;
-                                    int qE1 = Convert.ToInt16(bv_txb1Quantite.Text);
+                            //on vérifie si les combo et textbox sont vides ou non
+                            if (bv_cbx1NomEchantillon.Text != "" && bv_txb1Quantite.Text != "")
+                            {
+                                string nomE1 = bv_cbx1NomEchantillon.Text;
+                                int qE1 = Convert.ToInt16(bv_txb1Quantite.Text);
 
-                                    //on récupère l'id du médicament
-                                    int idM = Convert.ToInt16(Manager.Manager.SelectIDmedicament(nomE1)[0][0]);
+                                //on récupère l'id du médicament
+                                int idM = Convert.ToInt16(Manager.Manager.SelectIDmedicament(nomE1)[0][0]);
 
-                                    //on récupère l'id du rapport
+                                //on récupère l'id du rapport
 
-                                    int idR = Convert.ToInt16(Manager.Manager.SelectIDbilan(idp, idv)[0][0]);
+                                int idR = Convert.ToInt16(Manager.Manager.SelectIDbilan(idp, idv)[0][0]);
 
-                                    //on ajoute l'échantillon dans la table offrir
-                                    Manager.Manager.AddOffre(idM, idR, qE1);
-                                }
+                                //on ajoute l'échantillon dans la table offrir
+                                Manager.Manager.AddOffre(idM, idR, qE1);
+                            }
 
-                                if (bv_cbx2NomEchantillon.Text != "" && bv_txb2Quantite.Text != "")
-                                {
-                                    string nomE1 = bv_cbx2NomEchantillon.Text;
-                                    int qE1 = Convert.ToInt16(bv_txb2Quantite.Text);
+                            if (bv_cbx2NomEchantillon.Text != "" && bv_txb2Quantite.Text != "")
+                            {
+                                string nomE1 = bv_cbx2NomEchantillon.Text;
+                                int qE1 = Convert.ToInt16(bv_txb2Quantite.Text);
 
-                                    //on récupère l'id du médicament
-                                    int idM = Convert.ToInt16(Manager.Manager.SelectIDmedicament(nomE1)[0][0]);
+                                //on récupère l'id du médicament
+                                int idM = Convert.ToInt16(Manager.Manager.SelectIDmedicament(nomE1)[0][0]);
 
-                                    //on récupère l'id du rapport
-                                    int idR = Convert.ToInt16(Manager.Manager.SelectIDbilan(idp, idv)[0][0]);
+                                //on récupère l'id du rapport
+                                int idR = Convert.ToInt16(Manager.Manager.SelectIDbilan(idp, idv)[0][0]);
 
-                                    //on ajoute l'échantillon dans la table offrir
-                                    Manager.Manager.AddOffre(idM, idR, qE1);
-                                }
+                                //on ajoute l'échantillon dans la table offrir
+                                Manager.Manager.AddOffre(idM, idR, qE1);
+                            }
 
-                                if (bv_cbx3NomEchantillon.Text != "" && bv_txb3Quantite.Text != "")
-                                {
-                                    string nomE1 = bv_cbx3NomEchantillon.Text;
-                                    int qE1 = Convert.ToInt16(bv_txb3Quantite.Text);
+                            if (bv_cbx3NomEchantillon.Text != "" && bv_txb3Quantite.Text != "")
+                            {
+                                string nomE1 = bv_cbx3NomEchantillon.Text;
+                                int qE1 = Convert.ToInt16(bv_txb3Quantite.Text);
 
-                                    //on récupère l'id du médicament
-                                    int idM = Convert.ToInt16(Manager.Manager.SelectIDmedicament(nomE1)[0][0]);
+                                //on récupère l'id du médicament
+                                int idM = Convert.ToInt16(Manager.Manager.SelectIDmedicament(nomE1)[0][0]);
 
-                                    //on récupère l'id du rapport
-                                    int idR = Convert.ToInt16(Manager.Manager.SelectIDbilan(idp, idv)[0][0]);
+                                //on récupère l'id du rapport
+                                int idR = Convert.ToInt16(Manager.Manager.SelectIDbilan(idp, idv)[0][0]);
 
-                                    //on ajoute l'échantillon dans la table offrir
-                                    Manager.Manager.AddOffre(idM, idR, qE1);
-                                }
+                                //on ajoute l'échantillon dans la table offrir
+                                Manager.Manager.AddOffre(idM, idR, qE1);
+                            }
 
-                                if (bv_cbx4NomEchantillon.Text != "" && bv_txb4Quantite.Text != "")
-                                {
-                                    string nomE1 = bv_cbx4NomEchantillon.Text;
-                                    int qE1 = Convert.ToInt16(bv_txb4Quantite.Text);
+                            if (bv_cbx4NomEchantillon.Text != "" && bv_txb4Quantite.Text != "")
+                            {
+                                string nomE1 = bv_cbx4NomEchantillon.Text;
+                                int qE1 = Convert.ToInt16(bv_txb4Quantite.Text);
 
-                                    //on récupère l'id du médicament
-                                    int idM = Convert.ToInt16(Manager.Manager.SelectIDmedicament(nomE1)[0][0]);
+                                //on récupère l'id du médicament
+                                int idM = Convert.ToInt16(Manager.Manager.SelectIDmedicament(nomE1)[0][0]);
 
-                                    //on récupère l'id du rapport
-                                    int idR = Convert.ToInt16(Manager.Manager.SelectIDbilan(idp, idv)[0][0]);
+                                //on récupère l'id du rapport
+                                int idR = Convert.ToInt16(Manager.Manager.SelectIDbilan(idp, idv)[0][0]);
 
-                                    //on ajoute l'échantillon dans la table offrir
-                                    Manager.Manager.AddOffre(idM, idR, qE1);
-                                }
+                                //on ajoute l'échantillon dans la table offrir
+                                Manager.Manager.AddOffre(idM, idR, qE1);
+                            }
 
-                                //on nettoie le formulaire
-                                clear();
-
-                            //}
-                            //catch
-                            //{
-                            //    MessageBox.Show("Erreur ! ", "Attention");
-                            //}
+                            //on nettoie le formulaire
+                            clear();
                         }
                     }
                 }

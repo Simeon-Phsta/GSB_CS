@@ -114,8 +114,12 @@ namespace Manager
 
         static public List<string[]> SelectRapports(int idMedecin)
         {
-            string sql = "SELECT rapport.id, date, motif, bilan " +
-                "FROM rapport INNER JOIN medecin ON medecin.id = rapport.idMedecin  " +
+            string sql = "SELECT rapport.id, rapport.date, rapport.motif, rapport.bilan, COUNT(offrir.quantite ) " +
+                "FROM rapport INNER JOIN offrir ON rapport.id = offrir.idRapport " +
+                "WHERE rapport.idMedecin = '" + idMedecin + "'" +
+                "UNION " +
+                "SELECT rapport.id, rapport.date, rapport.motif, rapport.bilan, 0 " +
+                "FROM rapport " +
                 "WHERE rapport.idMedecin = '" + idMedecin + "'";
             return Passerelle.Query(Manager.conenct(), sql);
         }

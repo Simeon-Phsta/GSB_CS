@@ -125,7 +125,7 @@ namespace App_GSB_cs
         {
             clearChampsRapport();
 
-
+            //Création d'un liste pour stocké le resultat de la requête sql
             List<string[]> result = new List<string[]>();
             //On prends les informations de la ligne seléctionnée dans les cbbox et cbtxt
             result = Manager.Manager.SelectMedecin(Convert.ToInt32(dtgvAllMedics.Rows[e.RowIndex].Cells[7].Value));
@@ -140,17 +140,23 @@ namespace App_GSB_cs
 
             //On essaye de prendre les rapports liés au medecin sélectionné
 
-                List<string[]> temp = Manager.Manager.SelectRapports(Convert.ToInt32(result[0][7]));
-                if (temp != null)
+            List<string[]> autre = Manager.Manager.SelectRapports(Convert.ToInt32(result[0][7]));
+            string temp = "";
+            MessageBox.Show(autre[0][0]);
+            if (autre[0][0] != null)
+            {
+                foreach (string[] t in autre)
                 {
-                    foreach (string[] l in temp)
+                    if (t[0] != null)
                     {
-                        if (l != null)
+                        if (temp != t[0])
                         {
-                            dtgvRapport.Rows.Add(l);
+                            temp = t[0];
+                            dtgvRapport.Rows.Add(t);
                         }
                     }
                 }
+            }
         }
         #endregion
 
@@ -170,31 +176,27 @@ namespace App_GSB_cs
         private void btnSupprimerMedecin_Click(object sender, EventArgs e)
         {
             
-            //Tentative de suppression du medecin et de ses rapports selectionner après vérification 
-            //try
-            //{
+            //Suppression du medecin et de ses rapports selectionner après confirmation de l'utilisateur 
 
-                DialogResult temp = MessageBox.Show("Voulez vous supprimer le praticien ? \r Cela supprime les rapports qui lui sont " +
-                    "associés ! (", "Attention", MessageBoxButtons.YesNo);
-                if (temp == DialogResult.Yes)
+            DialogResult temp = MessageBox.Show("Voulez vous supprimer le praticien ? \r Cela supprime les rapports qui lui sont " +
+                "associés ! (", "Attention", MessageBoxButtons.YesNo);
+            if (temp == DialogResult.Yes)
+            {
+                //Création d'une liste avec tous les id des rapports rapportés au medecin
+                List<string[]> resultats = Manager.Manager.SelectIdRapportsPourMedecin(Convert.ToInt32(txtBxIdMedecin.Text));
+                
+                //On les supprime
+                foreach( string[] resultat in resultats)
                 {
-                    List<string[]> resultats = Manager.Manager.SelectIdRapportsPourMedecin(Convert.ToInt32(txtBxIdMedecin.Text));
-
-                    foreach( string[] resultat in resultats)
-                    {
-                    Manager.Manager.DeleteRapport(Convert.ToInt32(resultat[0]));
-                    }
-
-                    Manager.Manager.DeleteMedecin(Convert.ToInt32(txtBxIdMedecin.Text));
-                    //Rechargement des données
-                    reload();
-                        MessageBox.Show("Vous avez supprimé le ou la praticien(ne).", "Suppression");
+                Manager.Manager.DeleteRapport(Convert.ToInt32(resultat[0]));
                 }
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Vous n'avez pas pu supprimé le ou la praticien(ne). Contactez l'administrateur.", "Erreur");
-            //}
+
+                Manager.Manager.DeleteMedecin(Convert.ToInt32(txtBxIdMedecin.Text));
+                //Rechargement des données
+                reload();
+                    MessageBox.Show("Vous avez supprimé le ou la praticien(ne).", "Suppression");
+            }
+
         }
         #endregion
 
